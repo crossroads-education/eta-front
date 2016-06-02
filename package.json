@@ -1,0 +1,20 @@
+{
+  "name": "eta-front",
+  "version": "0.0.1",
+  "description": "Front-end (public) pages for Eta.",
+  "homepage": "http://github.com/crossroads-education/eta-front/",
+  "repository": "git://github.com:crossroads-education/eta-front.git",
+  "license": "MIT",
+  "author": {
+    "name": "Alex Hicks",
+    "email": "alex@alexhicks.net",
+    "url": "http://alexhicks.net"
+  },
+  "contributors": [],
+  "dependencies": {
+    "stack-trace": "0.0.9"
+  },
+  "engines": {
+    "node": ">=4.4.0"
+  }
+}
