@@ -9,7 +9,8 @@ requirejs.config({
         "jquery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min",
         "jquery-bez": "https://cdn.jsdelivr.net/jquery.bez/1.0.11/jquery.bez.min",
         "jquery-noisy": "https://cdnjs.cloudflare.com/ajax/libs/noisy/1.2/jquery.noisy.min",
-        "jquery-ui": "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min"
+        "jquery-ui": "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min",
+        "moment": "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min"
     },
     "shim": {
         "jquery": {
