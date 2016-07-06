@@ -63,8 +63,31 @@ export class Model implements eta.Model {
                     eta.logger.json(rows);
                     eta.logger.trace("User " + username + " logged in successfully.");
                     req.session["userid"] = rows[0].id;
-                    eta.logger.json(req.session);
-                    eta.redirect.back(req, res);
+                    let sql : string = `
+                    SELECT
+                        Position.*
+                    FROM
+                        EmployeePosition
+                            LEFT JOIN \`Position\` ON
+                                \`EmployeePosition\`.\`position\` = \`Position\`.\`id\`
+                    WHERE
+                        \`EmployeePosition\`.\`id\` = ?
+                        `
+                    eta.db.query(sql, [req.session["userid"]], (err : eta.DBError, rows : any[]) => {
+                        if (err) {
+                            eta.logger.dbError(err);
+                            callback({errcode: eta.http.InternalError});
+                            return;
+                        }
+                        if (rows.length == 0) {
+                            eta.logger.trace("User " + username + " was not found in EmployeePosition");
+                            return;
+                        }
+                        req.session["positions"] = rows;
+                        eta.logger.json(req.session);
+                        eta.redirect.back(req, res);
+                    })
+
                 });
             } else {
                 eta.logger.warn("Something is wrong with the CAS server: received response '" + response + "'.");
