@@ -63,31 +63,54 @@ export class Model implements eta.Model {
                     eta.logger.json(rows);
                     eta.logger.trace("User " + username + " logged in successfully.");
                     req.session["userid"] = rows[0].id;
-                    let sql : string = `
-                    SELECT
+                    let sql : string = `SELECT
                         Position.*
                     FROM
                         EmployeePosition
                             LEFT JOIN \`Position\` ON
                                 \`EmployeePosition\`.\`position\` = \`Position\`.\`id\`
                     WHERE
-                        \`EmployeePosition\`.\`id\` = ?
-                        `
+                        \`EmployeePosition\`.\`id\` = ?`;
                     eta.db.query(sql, [req.session["userid"]], (err : eta.DBError, rows : any[]) => {
                         if (err) {
                             eta.logger.dbError(err);
                             callback({errcode: eta.http.InternalError});
                             return;
                         }
-                        if (rows.length == 0) {
-                            eta.logger.trace("User " + username + " was not found in EmployeePosition");
-                            return;
-                        }
+                        eta.logger.json(rows);
                         req.session["positions"] = rows;
-                        eta.logger.json(req.session);
-                        eta.redirect.back(req, res);
-                    })
-
+                        sql = `SELECT
+                                student.count AS student,
+                                professor.count AS professor
+                            FROM (
+                                SELECT
+                                    COUNT(*) as count
+                                FROM
+                                    StudentSection
+                                WHERE
+                                    student = ?
+                            ) AS student, (
+                                SELECT
+                                    COUNT(*) as count
+                                FROM
+                                    Section
+                                WHERE
+                                    professor = ?
+                            ) AS professor`;
+                        eta.db.query(sql, [req.session["userid"], req.session["userid"]], (err : eta.DBError, rows : any[]) => {
+                            if (err) {
+                                eta.logger.dbError(err);
+                                callback({errcode: eta.http.InternalError});
+                                return;
+                            }
+                            if (rows[0].professor != 0) {
+                                req.session["isProfessor"] = true;
+                            } else if (rows[0].student != 0) {
+                                req.session["isStudent"] = true;
+                            }
+                            eta.redirect.back(req, res);
+                        });
+                    });
                 });
             } else {
                 eta.logger.warn("Something is wrong with the CAS server: received response '" + response + "'.");
