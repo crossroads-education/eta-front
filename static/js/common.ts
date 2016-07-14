@@ -11,6 +11,7 @@ requirejs.config({
         "jquery-noisy": "https://cdnjs.cloudflare.com/ajax/libs/noisy/1.2/jquery.noisy.min",
         "jquery-ui": "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min",
         "kute": "https://cdn.jsdelivr.net/kute.js/1.5.0/kute.min",
+        "kute.js": "https://cdn.jsdelivr.net/kute.js/1.5.0/kute.min",
         "kute-jquery": "https://cdn.jsdelivr.net/kute.js/1.5.0/kute-jquery.min",
         "kute-svg": "https://cdn.jsdelivr.net/kute.js/1.5.0/kute-svg.min",
         "moment": "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min"
