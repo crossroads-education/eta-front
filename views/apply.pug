@@ -1,0 +1,34 @@
+extends ./include/layout.pug
+
+block body
+    div#header-no-image
+        pre.header-centered#headerText-no-image
+            strong Come work with us
+    div.box#jobBox
+        form#apply(action="/post/apply", method="POST")
+            p#errors
+            p#message
+            p(style="font-weight: bold;") You are applying as "#{name}".
+            div#level-wrapper
+                if isAvailable
+                    for position in positions
+                        div.level-block
+                            - var inputID = position.id + "-input";
+                            - var labelID = position.id + "-label";
+                            label.notSelected(for=inputID, id=labelID) #{position.name}
+                            input.toggleButton(type="checkbox", value=position.name, name="Position:" + position.name, id=inputID, data-name=labelID)
+                            if position.courses
+                                for course in position.courses.split(",")
+                                    p #{course}
+                else
+                    div.level-block.no-positions
+                        p
+                            strong No positions currently available.
+            div#release
+                p
+                    strong By checking the box below,
+                    br
+                    | !{agreementText}
+                label(for="infoRelease") *I agree
+                input#infoRelease(type="checkbox", title="Information release", required="true")
+                button#applyButton(type="submit") Apply
