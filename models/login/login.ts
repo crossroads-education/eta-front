@@ -28,7 +28,6 @@ export class Model implements eta.Model {
                 "casurl": this.params.fullUrl
             };
             let url : string = `https://${casUrl}login?cassvc=${params["cassvc"]}&casurl=${querystring.escape(params["casurl"])}`;
-            eta.logger.trace("Redirecting to " + url + " for login.");
             res.redirect(url);
             return;
         }
@@ -42,7 +41,6 @@ export class Model implements eta.Model {
                 callback({errcode: eta.http.InternalError});
                 return;
             }
-            eta.logger.trace("Received response '" + response + "' from CAS.");
             if (response.startsWith("no")) {
                 res.redirect(this.params.fullUrl + "?error=" + eta.http.Forbidden);
                 eta.logger.trace("User was denied access in /login.");
