@@ -3,6 +3,7 @@
 requirejs.config({
     "baseUrl": "/js/",
     "paths": {
+        "adapter": "http://webrtc.github.io/adapter/adapter-latest",
         "bootstrap": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min",
         "bootstrap-slider": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.1.1/bootstrap-slider.min",
         "chartjs": "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min",
@@ -16,7 +17,9 @@ requirejs.config({
         "kute.js": "https://cdn.jsdelivr.net/kute.js/1.5.0/kute.min",
         "kute-jquery": "https://cdn.jsdelivr.net/kute.js/1.5.0/kute-jquery.min",
         "kute-svg": "https://cdn.jsdelivr.net/kute.js/1.5.0/kute-svg.min",
-        "moment": "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min"
+        "moment": "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min",
+        "select2": "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min",
+        "socket.io-client": "/socket.io/socket.io.js"
     },
     "shim": {
         "jquery": {
