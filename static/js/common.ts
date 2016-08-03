@@ -10,8 +10,10 @@ requirejs.config({
         // had to rename so datatables-bootstrap works
         "datatables.net": "https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min",
         "datatables.net-bs": "https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min",
-        "datatables.net-buttons": "https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min",
-        "datatables.net-buttons-bs": "https://cdn.datatables.net/buttons/1.2.1/js/buttons.bootstrap.min",
+        "datatables.net-buttons": "https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min",
+        "datatables.net-buttons-bs": "https://cdn.datatables.net/buttons/1.2.2/js/buttons.bootstrap.min",
+        "datatables.net-buttons-html5": "https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min",
+        "datatables.net-buttons-print": "https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min",
         "es6-shim": "https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.1/es6-shim.min",
         "jquery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min",
         "jquery-bez": "https://cdn.jsdelivr.net/jquery.bez/1.0.11/jquery.bez.min",
