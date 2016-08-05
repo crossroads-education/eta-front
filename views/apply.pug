@@ -13,8 +13,8 @@ block body
                 if isAvailable
                     for position in positions
                         div.level-block
-                            - var inputID = position.id + "-input";
-                            - var labelID = position.id + "-label";
+                            - var inputID = position.name + "-input";
+                            - var labelID = position.name + "-label";
                             label.notSelected(for=inputID, id=labelID) #{position.name}
                             input.toggleButton(type="checkbox", value=position.name, name="Position:" + position.name, id=inputID, data-name=labelID)
                             if position.courses

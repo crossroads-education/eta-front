@@ -6,7 +6,6 @@ export class Model implements eta.Model {
     public render(req : express.Request, res : express.Response, callback : (env : {[key : string] : any}) => void) : void {
         let sql : string = `
             SELECT
-                Position.id,
                 Position.name,
                 GROUP_CONCAT(DISTINCT CONCAT(Course.subject, ' ', Course.number)) AS courses
             FROM
