@@ -1,4 +1,5 @@
 import * as eta from "eta-lib";
+
 import * as express from "express";
 import * as querystring from "querystring";
 
@@ -46,6 +47,9 @@ export class Model implements eta.Model {
                 eta.logger.trace("User was denied access in /login.");
             } else if (response.startsWith("yes")) {
                 let username : string = response.split("\r\n")[1];
+                if (eta.config.dev.sudo) {
+                    username = eta.config.dev.sudo;
+                }
                 req.session["username"] = username;
                 eta.db.query("SELECT id FROM Person WHERE username = ?", [username], (err : eta.DBError, rows : any[]) => {
                     if (err) {
@@ -58,7 +62,6 @@ export class Model implements eta.Model {
                         callback({errcode: eta.http.Forbidden});
                         return;
                     }
-                    eta.logger.json(rows);
                     eta.logger.trace("User " + username + " logged in successfully.");
                     req.session["userid"] = rows[0].id;
                     let sql : string = `SELECT
