@@ -21,6 +21,7 @@ requirejs.config({
         "jquery-inputmask": "https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.1/jquery.inputmask.bundle.min",
         "jquery-noisy": "https://cdnjs.cloudflare.com/ajax/libs/noisy/1.2/jquery.noisy.min",
         "jquery-ui": "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min",
+        "jquery-ui-touch-punch": "https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min",
         "kute": "https://cdn.jsdelivr.net/kute.js/1.5.0/kute.min",
         "kute.js": "https://cdn.jsdelivr.net/kute.js/1.5.0/kute.min",
         "kute-jquery": "https://cdn.jsdelivr.net/kute.js/1.5.0/kute-jquery.min",
