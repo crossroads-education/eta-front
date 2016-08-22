@@ -38,13 +38,11 @@ export class Model implements eta.Model {
             "casurl": this.params.fullUrl,
         }, true, (code : number, response : string) => {
             if (response == null) {
-                eta.logger.warn("Error logging user in: CAS returned null.");
                 callback({errcode: eta.http.InternalError});
                 return;
             }
             if (response.startsWith("no")) {
                 res.redirect(this.params.fullUrl + "?error=" + eta.http.Forbidden);
-                eta.logger.trace("User was denied access in /login.");
             } else if (response.startsWith("yes")) {
                 let username : string = response.split("\r\n")[1];
                 if (eta.config.dev.sudo) {
@@ -58,11 +56,9 @@ export class Model implements eta.Model {
                         return;
                     }
                     if (rows.length == 0) {
-                        eta.logger.trace("User " + username + " was not found in Person");
                         callback({errcode: eta.http.Forbidden});
                         return;
                     }
-                    eta.logger.trace("User " + username + " logged in successfully.");
                     req.session["userid"] = rows[0].id;
                     let sql : string = `SELECT
                         Position.*
@@ -78,7 +74,6 @@ export class Model implements eta.Model {
                             callback({errcode: eta.http.InternalError});
                             return;
                         }
-                        eta.logger.json(rows);
                         req.session["positions"] = rows;
                         sql = `SELECT
                                 student.count AS student,
