@@ -60,20 +60,30 @@ export class Model implements eta.Model {
                         return;
                     }
                     req.session["userid"] = rows[0].id;
-                    let sql : string = `SELECT
-                        Position.*
-                    FROM
-                        EmployeePosition
-                            LEFT JOIN \`Position\` ON
-                                \`EmployeePosition\`.\`position\` = \`Position\`.\`id\`
-                    WHERE
-                        \`EmployeePosition\`.\`id\` = ?`;
+                    let sql : string = `
+                        SELECT
+                            Position.*,
+                            Center.department
+                        FROM
+                            EmployeePosition
+                                LEFT JOIN Position ON
+                                    EmployeePosition.position = Position.id
+                                LEFT JOIN Center ON
+                                    Position.center = Center.id
+                        WHERE
+                            EmployeePosition.id = ? AND
+                            EmployeePosition.start <= CURDATE() AND
+                            (
+                                EmployeePosition.end > CURDATE() OR
+                                ISNULL(EmployeePosition.end)
+                            )`;
                     eta.db.query(sql, [req.session["userid"]], (err : eta.DBError, rows : any[]) => {
                         if (err) {
                             eta.logger.dbError(err);
                             callback({errcode: eta.http.InternalError});
                             return;
                         }
+                        req.session["department"] = rows.length > 0 ? rows[0].department : -1;
                         req.session["positions"] = rows;
                         sql = `SELECT
                                 student.count AS student,
