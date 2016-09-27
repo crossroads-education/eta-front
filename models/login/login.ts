@@ -4,13 +4,13 @@ import * as express from "express";
 import * as querystring from "querystring";
 
 export class Model implements eta.Model {
-    private params : eta.ModelParams;
+    private params: eta.ModelParams;
 
-    public setParams(params : eta.ModelParams) : void {
+    public setParams(params: eta.ModelParams): void {
         this.params = params;
     }
 
-    public render(req : express.Request, res : express.Response, callback : (env : {[key : string] : any}) => void) : void {
+    public render(req: express.Request, res: express.Response, callback: (env: { [key: string]: any }) => void): void {
         if (req.query.error) {
             callback({
                 "errmsg": "Access denied"
@@ -21,14 +21,14 @@ export class Model implements eta.Model {
             eta.redirect.back(req, res);
             return;
         }
-        let casUrl : string = <string>eta.setting.get("/login", "CAS Url").value;
-        let casService : string = <string>eta.setting.get("/login", "CAS Service").value;
+        let casUrl: string = <string>eta.setting.get("/login", "CAS Url").value;
+        let casService: string = <string>eta.setting.get("/login", "CAS Service").value;
         if (!req.query.casticket) {
-            let params : {[key : string] : string} = {
+            let params: { [key: string]: string } = {
                 "cassvc": casService,
                 "casurl": this.params.fullUrl
             };
-            let url : string = `https://${casUrl}login?cassvc=${params["cassvc"]}&casurl=${querystring.escape(params["casurl"])}`;
+            let url: string = `https://${casUrl}login?cassvc=${params["cassvc"]}&casurl=${querystring.escape(params["casurl"])}`;
             res.redirect(url);
             return;
         }
@@ -36,31 +36,31 @@ export class Model implements eta.Model {
             "cassvc": casService,
             "casticket": req.query.casticket,
             "casurl": this.params.fullUrl,
-        }, true, (code : number, response : string) => {
+        }, true, (code: number, response: string) => {
             if (response == null) {
-                callback({errcode: eta.http.InternalError});
+                callback({ errcode: eta.http.InternalError });
                 return;
             }
             if (response.startsWith("no")) {
                 res.redirect(this.params.fullUrl + "?error=" + eta.http.Forbidden);
             } else if (response.startsWith("yes")) {
-                let username : string = response.split("\r\n")[1];
+                let username: string = response.split("\r\n")[1];
                 if (eta.config.dev.sudo) {
                     username = eta.config.dev.sudo;
                 }
                 req.session["username"] = username;
-                eta.db.query("SELECT id FROM Person WHERE username = ?", [username], (err : eta.DBError, rows : any[]) => {
+                eta.db.query("SELECT id FROM Person WHERE username = ?", [username], (err: eta.DBError, rows: any[]) => {
                     if (err) {
                         eta.logger.dbError(err);
-                        callback({errcode: eta.http.InternalError});
+                        callback({ errcode: eta.http.InternalError });
                         return;
                     }
                     if (rows.length == 0) {
-                        callback({errcode: eta.http.Forbidden});
+                        callback({ errcode: eta.http.Forbidden });
                         return;
                     }
                     req.session["userid"] = rows[0].id;
-                    let sql : string = `
+                    let sql: string = `
                         SELECT
                             Position.*,
                             Center.department
@@ -77,10 +77,10 @@ export class Model implements eta.Model {
                                 EmployeePosition.end > CURDATE() OR
                                 ISNULL(EmployeePosition.end)
                             )`;
-                    eta.db.query(sql, [req.session["userid"]], (err : eta.DBError, rows : any[]) => {
+                    eta.db.query(sql, [req.session["userid"]], (err: eta.DBError, rows: any[]) => {
                         if (err) {
                             eta.logger.dbError(err);
-                            callback({errcode: eta.http.InternalError});
+                            callback({ errcode: eta.http.InternalError });
                             return;
                         }
                         req.session["department"] = rows.length > 0 ? rows[0].department : -1;
@@ -103,10 +103,10 @@ export class Model implements eta.Model {
                                 WHERE
                                     professor = ?
                             ) AS professor`;
-                        eta.db.query(sql, [req.session["userid"], req.session["userid"]], (err : eta.DBError, rows : any[]) => {
+                        eta.db.query(sql, [req.session["userid"], req.session["userid"]], (err: eta.DBError, rows: any[]) => {
                             if (err) {
                                 eta.logger.dbError(err);
-                                callback({errcode: eta.http.InternalError});
+                                callback({ errcode: eta.http.InternalError });
                                 return;
                             }
                             if (rows[0].professor != 0) {
