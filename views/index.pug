@@ -1,25 +1,7 @@
 extends ./include/layout.pug
 
 block body
-    div#navBar
-        ul.navLinks
-            li#nav-image
-                a(href=baseurl)
-                    div.MAC_Logo
-            li
-                a(href=baseurl + "nexus") Live Help
-            li
-                a(href=baseurl + "resources") Resources
-            li
-                a(href=baseurl + "apply") Jobs
-            li
-                a(href=baseurl + "events") Events
-            li
-                a(href=baseurl + "team") The Team
-            li
-                a(href=baseurl + "press") Press
-            li
-                a(href=baseurl + "contact") Contact
+    +navBar
         div.text-center.button-container
             a.btn.btn-primary.btn-er#btn-online(href=baseurl + "nexus") Get live help online
     img.full-image(src = "../img/Homepage.png")
@@ -28,6 +10,15 @@ block body
             p.body-header Your peers are
             p.body-header here to help.
             div(data-paragraph="1").data-paragraph
+              p.body-text
+                |The Mathematics Assistance Center (MAC) is a place for
+                br
+                |collaboration with peers on math assignments.
+                br
+                |Located in Taylor Hall, UC B001, the MAC offers tutoring
+                br
+                |and peer mentoring.
+            div(data-paragraph="2").data-paragraph
                 p.body-text
                  |The MAC is located in Taylor Hall (UC B001) and offers tutoring
                  br
@@ -36,7 +27,7 @@ block body
                  |mathematics course. Assistance with online homework and
                  br
                  |software projects is available as well.
-            div(data-paragraph="2").data-paragraph
+            div(data-paragraph="3").data-paragraph
                 p.body-text
                     |The MAC STAT is located in the library (UL 2135D) and caters
                     br
@@ -55,8 +46,8 @@ block body
 
     div.col-xs-12.row#hours-container
         p.body-header.text-center We're ready when you are.
-        div.col-xs-5#table-container
-            table.table
+        div.col-xs-4#table-container
+            table.table#hours-table
                 thead
                     tr
                         th.null
@@ -76,8 +67,9 @@ block body
                                 td.form-label.hours Closed
         div.col-xs-4#calendar-container
             div#calendar
-    div.col-xs-12#footer-container
-        div.col-xs-11#footer-elements
+
+    div.col-xs-12#resources-container
+        div.col-xs-11#resources-elements
             p.body-header
                 |We have just what
                 br
@@ -94,7 +86,7 @@ block body
                 |mid-terms and final exams.
             a.btn.btn-primary.btn-er#btn-resources.col-xs-4(href = "http://math.iupui.edu/undergraduate/courses") Check 'em out
         img.full-image#footer-image(src = "../img/ladywriting.png")
-
+        +footer
     div.modal.fade#modal-video(tabindex="-1")
         div.modal-dialog.modal-lg
             div.modal-content

@@ -12,6 +12,7 @@ div#body, div#body *:not(.fa){
 	position: relative;
 }
 
+
 .navLinks {
 	list-style-type: none;
 	height: 100%;
@@ -47,8 +48,6 @@ div#body, div#body *:not(.fa){
 
 .MAC_Logo {
 	background-image: url('../img/logo.png');
-	/*width: 150px;
-	height: 70px;*/
 	padding: 26px 56px;
 	background-size: cover;
 	display: inline-block;
@@ -56,25 +55,119 @@ div#body, div#body *:not(.fa){
 
 .MAC_Logo_white {
 	background-image: url('/img/logo_white.png');
-	/*width: 150px;
-	height: 70px;*/
 	padding: 26px 56px;
 	background-size: cover;
 	margin: 20px 75px;
-	/*padding-left: 0;*/
+
 	display: inline-block;
 }
 
 .navLinks>#nav-image {
-	/*padding-top: 0px;*/
 	padding: 13px 20px 0px;
 	margin-left: 5px;
 	margin-right: 0px;
-	/*height: 70px;*/
 }
 
 #body {
     margin-left: 0px !important;
     margin-bottom: 0px !important;
     max-width: 100%;
+}
+
+/*footer stuff */
+
+#footer table {
+    width: 100%;
+}
+
+.column-container {
+    width: 33%;
+}
+
+#footer {
+    padding-bottom: 0px;
+    background-color: #333333;
+    margin-top: 0px;
+}
+
+#footer td {
+    border: 1px solid #C3C3C3;
+}
+
+.list-text {
+    color: white !important;
+}
+
+.footer-column1-list {
+    padding-left: 100px;
+    border-right: 0px;
+    padding-right: 14px;
+}
+
+.footer-column1 li {
+    text-align: left;
+}
+
+.row-image {
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-top: 0px !important;
+}
+
+.footer-column1 {
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-bottom: 0px !important;
+}
+
+.footer-column2 {
+    border-left: 0px !important;
+    border-bottom: 0px !important;
+}
+
+.footer-column2-list {
+    border-left: 0px;
+    padding-left: 0px;
+    padding-right: 100px;
+}
+
+.footer-column2 li {
+    text-align: left;
+}
+
+#footer li {
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+.mac-facebook {
+    vertical-align: top;
+}
+
+#btn-employee {
+    background-color: #2B2B2B;
+    color: white !important;
+    width: 205.5px;
+
+}
+
+.footer-column-container {
+    width: 33%;
+}
+
+.address-container {
+    padding-left: 110px !important;
+    font-size: 20pt;
+    font-weight: lighter !important;
+    text-align: left;
+    line-height: 20pt;
+}
+
+#footer-logo {
+    background-size: cover;
+    background-image: url("../img/logo_white.png");
+    margin: 42px 0px 38px 51px;
+    width: 156px;
+    height: 72px;
+    text-align: left;
 }

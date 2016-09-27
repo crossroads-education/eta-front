@@ -45,12 +45,12 @@
 }
 
 .cal-row-fluid {
-    max-height: 40px;
+    max-height: 48px;
 }
 
 .cal-cell1 {
     min-height: 0px !important;
-    max-height: 40px;
+    max-height: 48px;
 }
 
 .cal-month-box .cal-day-today span[data-cal-date] {
@@ -58,7 +58,7 @@
 }
 
 .cal-month-day {
-    height: 40px !important;
+    height: 48px !important;
 }
 
 .image-left {
@@ -74,7 +74,23 @@
 }
 
 #table-container {
-    margin-right: 12%;
+    margin-right: 6%;
+    padding: 0px;
+    margin-left: 15%;
+}
+
+#hours-table{
+    table-layout: fixed;
+    border: 0 !important;
+}
+
+#hours-table th{
+    border-bottom: 0 !important;
+}
+
+#hours-table td{
+    width: 120px;
+    border-top: 0 !important;
 }
 
 .text-block {
@@ -96,6 +112,14 @@
 div.data-paragraph[data-paragraph="1"]{
     margin-top: 46.867px;
     margin-bottom: 25px;
+}
+
+div.data-paragraph[data-paragraph="2"]{
+    margin-bottom: 25px;
+}
+
+#cal-week-box {
+  display: none !important;
 }
 
 img {
@@ -121,6 +145,10 @@ img {
     letter-spacing: -.01px;
 }
 
+#calendar-container {
+  padding: 0px;
+  margin-right: 12%;
+}
 
 #navBar {
     position: absolute;
@@ -141,7 +169,7 @@ img {
 }
 
 .button-container {
-    z-index: 3;
+    z-index: 4;
     margin-top: 39%;
 }
 
@@ -153,35 +181,17 @@ img {
     border-radius: 40px;
 }
 
-#table-hours {
-    max-height: 200px !important;
-    border: 1px #ffffff;
-    border: 0;
-    cellspacing: 0;
-    cellpadding: 0;
-
-}
-
 .hours {
     font-size: 1.5em;
     font-weight: lighter !important;
 }
-.footer-container {
+.resources-container {
     position: absolute;
 }
+
 .hours-index {
     font-size: 1.313em;
     font-weight: bold;
-}
-
-#table-hours td {
-    border: 0 !important;
-    border-top: 0 !important;
-    padding-top: 6 !important;
-}
-
-#table-hours th {
-    border-bottom: 0 !important;
 }
 
 .modal-body {
@@ -207,38 +217,36 @@ img {
     padding-top: 12px;
 }
 
-#footer-container {
+#resources-container {
     position: relative;
     z-index: 1;
     padding: 0 !important;
 }
 
 #hours-container {
+    padding: 0px;
     margin-bottom: 230px;
     margin-top: 197px;
 }
 
-#footer-elements {
+#resources-elements {
     position: absolute;
     z-index: 3;
     margin-left: 8.3%;
 }
 
-#footer-elements p.body-header {
+#resources-elements p.body-header {
     line-height: 1;
     margin-top: 116px;
     margin-bottom: 23px;
     color: white;
 }
 
-#footer-elements p.body-text {
+#resources-elements p.body-text {
     margin-bottom: 75px;
     color: white;
 }
 
-#table-hours {
-    margin-left: 160px;
-}
 
 #btn-showreel {
     margin-top: 77px;
