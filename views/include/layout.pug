@@ -1,7 +1,6 @@
 extends ../../../../views/include/layout_university.pug
 
-
-mixin navBar
+block navbar
     div#navBar
         ul.navLinks
             li#nav-image
@@ -12,7 +11,7 @@ mixin navBar
             li
                 a(href=baseurl + "resources") Resources
             li
-                a(href=baseurl + "apply") Jobs
+                a(href=baseurl + "apply") Apply
             li
                 a(href=baseurl + "events") Events
             li
@@ -20,55 +19,4 @@ mixin navBar
             li
                 a(href=baseurl + "press") Press
             li
-                a(href= baseurl + "contact") Contact
-        block
-
-mixin footer
-    div#footer
-        table
-            tr
-                td.row-image(colspan="5")
-                    a(href=baseurl)
-                        div#footer-logo
-            tr
-                td.footer-column1
-                    ul.footer-column1-list
-                        li
-                            a.list-text(href=baseurl + "nexus") Live Help
-                        li
-                            a.list-text(href=baseurl + "resources") Resources
-                        li
-                            a.list-text(href=baseurl + "apply") Jobs
-                        li
-                            a.list-text(href=baseurl + "events") Events
-                td.footer-column2
-                    ul.footer-column2-list
-                        li
-                            a.list-text(href=baseurl + "team") The Team
-                        li
-                            a.list-text(href=baseurl + "press") Press
-                        li
-                            a.list-text(href=baseurl + "partners.php") Partners
-                        li
-                            a.list-text(href=baseurl + "contact") Contact
-                td(width="25%")
-                    a.btn.btn-primary.btn-er#btn-employee(href=baseurl + "office") Employee portal
-                    ul
-                        li
-                            a.list-text(href="https://mac.iupui.edu/TutorTrac/macTracStudent.php") Track your visits
-                        li
-                            a.list-text(href) MAC flyer 2016
-                td
-                    p.list-text.address-container
-                        |815 West Michigan Street
-                        br
-                        |Room B01
-                        br
-                        |Indianapolis, IN 46202
-                        br
-                        br
-                        a317-274-7898
-                    a(href="https://twitter.com/MACatIUPUI")
-                        img.mac-twitter(src="../img/twitter.png")
-                    a(href="https://www.facebook.com/MACatIUPUI")
-                        img.mac-facebook(src="../img/facebook.png")
+                a(href=baseurl + "contact") Contact
