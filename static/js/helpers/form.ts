@@ -33,7 +33,7 @@ export module form {
             status.error("Please enter a value for any empty fields.");
             return;
         }
-        let ajax: any = $[$formElement.attr("method").toLowerCase()];
+        let ajax: any = (<any>$)[$formElement.attr("method").toLowerCase()];
         ajax($formElement.data("action"), params, function() {
             status.success("Successfully submitted form.");
         }).fail(function(data: any) {
