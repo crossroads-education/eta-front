@@ -1,5 +1,6 @@
 {
     "css": [
-        "https://cdn.jsdelivr.net/bootstrap.calendar/0.2.4/css/calendar.min.css"
+        "https://cdn.jsdelivr.net/bootstrap.calendar/0.2.4/css/calendar.min.css",
+        "https://addtocalendar.com/atc/1.5/atc-style-blue.css"
     ]
 }

@@ -28,6 +28,9 @@ export module index {
                 }
             }
         )
+        $(".cal-row-head .cal-cell1").each(function() { //truncates calendar elements down to 3 chars
+            $(this).text($(this).text().substring(0, 3));
+        });
         $("#btn-stat").click(renderVideo("https://www.youtube.com/embed/HQykE8yDKIk"));
         $("#btn-showreel").click(renderVideo("https://www.youtube.com/embed/x-LCi2Pg4Z4"));
         $("#modal-video").on('hidden.bs.modal', function (e) {
@@ -42,4 +45,5 @@ export module index {
             }
         }
     }
+
 }

@@ -3,49 +3,29 @@ extends ./include/layout.pug
 block body
     +navBar
         div.text-center.button-container
-            a.btn.btn-primary.btn-er#btn-online(href=baseurl + "nexus") Get live help online
+            a.btn.btn-primary.btn-er.black#btn-online(href=baseurl + "nexus") Get live help online
     img.full-image(src = "../img/Homepage.png")
     div.block.col-xs-12#description-container
-        div.col-xs-5#paragraph-container
-            p.body-header Your peers are
-            p.body-header here to help.
+        div.col-xs-5.col-xs-offset-1.black#paragraph-container
+            p.body-header Your peers are here to help.
             div(data-paragraph="1").data-paragraph
-              p.body-text
-                |The Mathematics Assistance Center (MAC) is a place for
-                br
-                |collaboration with peers on math assignments.
-                br
-                |Located in Taylor Hall, UC B001, the MAC offers tutoring
-                br
-                |and peer mentoring.
+                p.body-text.light The Mathematics Assistance Center (MAC) is a place for collaboration with peers on math assignments. Located in Taylor Hall, UC B001, the MAC offers tutoring and peer mentoring.
             div(data-paragraph="2").data-paragraph
-                p.body-text
-                 |The MAC is located in Taylor Hall (UC B001) and offers tutoring
-                 br
-                 |and peer mentoring from fellow students to anyone in a
-                 br
-                 |mathematics course. Assistance with online homework and
-                 br
-                 |software projects is available as well.
+                p.body-text.light The MAC is located in Taylor Hall (UC B001) and offers tutoring and peer mentoring from fellow students to anyone in a mathematics course. Assistance with online homework and software projects is available as well.
             div(data-paragraph="3").data-paragraph
-                p.body-text
-                    |The MAC STAT is located in the library (UL 2135D) and caters
-                    br
-                    |specifically to statistics courses. It's the MAC as you know it, just
-                    br
-                    |for statistics.
+                p.body-text.light The MAC STAT is located in the library (UL 2135D) and caters specifically to statistics courses. It's the MAC as you know it, just for statistics.
             div
                 button.btn.btn-primary.button-vod#btn-showreel(data-toggle="modal", data-target="#modal-video")
-                    span.vod-span Watch our show reel
+                    span.vod-span.black Watch our show reel
                     i.fa.fa-play-circle-o(aria-hidden="true")
             div
                 button.btn.btn-primary.button-vod#btn-stat(data-toggle="modal", data-target="#modal-video")
-                    span.vod-span Ten reasons to use the MAC Stat
+                    span.vod-span.black Ten reasons to use the MAC Stat
                     i.fa.fa-play-circle-o(aria-hidden="true")
-        img(src = "../img/body-image.png").col-xs-5
+        img(src = "../img/body-image.png").col-xs-5.col-xs-offset-1
 
     div.col-xs-12.row#hours-container
-        p.body-header.text-center We're ready when you are.
+        p.body-header.text-center.black#calendar-label We're ready when you are.
         div.col-xs-4#table-container
             table.table#hours-table
                 thead
@@ -58,33 +38,20 @@ block body
                         tr
                             td.form-label.hours-index #{row.day}
                             if (row.floorOpen != row.floorClose)
-                                td.form-label.hours #{row.floorOpen}-#{row.floorClose}
+                                td.form-label.hours.light #{row.floorOpen}-#{row.floorClose}
                             -else
-                                td.form-label.hours Closed
+                                td.form-label.hours.light Closed
                             if ( row.onlineOpen != row.onlineClose)
-                                td.form-label.hours #{row.onlineOpen}-#{row.onlineClose}
+                                td.form-label.hours.light #{row.onlineOpen}-#{row.onlineClose}
                             -else
-                                td.form-label.hours Closed
-        div.col-xs-4#calendar-container
+                                td.form-label.hours.light Closed
+        div.col-xs-4.col-xs-offset-1#calendar-container
             div#calendar
-
     div.col-xs-12#resources-container
-        div.col-xs-11#resources-elements
-            p.body-header
-                |We have just what
-                br
-                |you needed.
-            p.body-text
-                |We made several class resources just for you. These
-                br
-                |resources include instructive shorts, class hand-outs,
-                br
-                |formula sheets, study guides, practice examinations
-                br
-                |and answer keys. They're designed to prepare you for
-                br
-                |mid-terms and final exams.
-            a.btn.btn-primary.btn-er#btn-resources.col-xs-4(href = "http://math.iupui.edu/undergraduate/courses") Check 'em out
+        div.col-xs-11.col-xs-offset-1#resources-elements
+            p.body-header.black We have just what you needed.
+            p.body-text.light We made several class resources just for you. These resources include instructive shorts, class hand-outs, formula sheets, study guides, practice examinations and answer keys. They're designed to prepare you for mid-terms and final exams.
+            a.btn.btn-primary.btn-er.col-xs-4.black#btn-resources(href = "http://math.iupui.edu/undergraduate/courses") Check 'em out
         img.full-image#footer-image(src = "../img/ladywriting.png")
         +footer
     div.modal.fade#modal-video(tabindex="-1")

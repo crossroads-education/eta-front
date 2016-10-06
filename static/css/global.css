@@ -1,6 +1,6 @@
 
 div#body, div#body *:not(.fa){
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro Black', sans-serif;
     font-weight: 600;
 }
 
@@ -91,7 +91,7 @@ div#body, div#body *:not(.fa){
 }
 
 #footer td {
-    border: 1px solid #C3C3C3;
+    border: 1px solid #5E5757;
 }
 
 .list-text {
@@ -106,6 +106,11 @@ div#body, div#body *:not(.fa){
 
 .footer-column1 li {
     text-align: left;
+}
+
+.mac-twitter {
+    max-width: 35px;
+    max-height: 35px;
 }
 
 .row-image {
@@ -141,14 +146,19 @@ div#body, div#body *:not(.fa){
 }
 
 .mac-facebook {
+    max-width: 35px;
+    max-height: 35px;
     vertical-align: top;
+    margin-left: 10px;
 }
 
 #btn-employee {
     background-color: #2B2B2B;
     color: white !important;
-    width: 205.5px;
-
+    width: 205px;
+    padding-bottom: 0px;
+    padding-top: 12px;
+    font-size: 1.2em;
 }
 
 .footer-column-container {
@@ -156,11 +166,17 @@ div#body, div#body *:not(.fa){
 }
 
 .address-container {
-    padding-left: 110px !important;
+    padding-left: 20% !important;
     font-size: 20pt;
     font-weight: lighter !important;
     text-align: left;
     line-height: 20pt;
+}
+
+.telephone-ref {
+    font-size: 20pt !important;
+    font-weight: lighter !important;
+    color: white !important;
 }
 
 #footer-logo {
@@ -170,4 +186,35 @@ div#body, div#body *:not(.fa){
     width: 156px;
     height: 72px;
     text-align: left;
+}
+
+.footer-column3 {
+    width: 25%;
+    border-bottom: 0px !important;
+}
+
+.footer-column3 ul {
+    padding-left: 0 !important;
+}
+
+.footer-column3 li a {
+    font-weight: 300 !important;
+}
+
+.footer-column4 {
+    border-bottom: 0px !important;
+}
+
+.socialMedia {
+    padding-top: 5%;
+    float: left;
+    padding-left: 20%;
+}
+
+.light {
+    font-family: 'Source Sans Pro light', sans-serif !important;
+}
+
+.black {
+    font-family: 'Source Sans Pro Black', sans-serif !important;
 }
