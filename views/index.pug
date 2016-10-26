@@ -1,0 +1,100 @@
+extends ./include/layout.pug
+
+block body
+    div#container-header
+        img(src="/img/index/header.jpg")
+        pre.header-text.text-left(style="color: white;").
+            <strong>building</strong>
+
+            <strong>a culture</strong>
+
+            OF
+
+            <strong>collaboration</strong>
+
+            &nbsp;
+    div.block.text-right(style="background-color: white;")
+        div.image.text-left(style="right: 57%; background-image: url('/img/index/block1.jpg');")
+        div.text-block(style="width: 53%;")
+            div.title.text-left Your peers are here to help
+            pre(style="color: black;").
+                The MAC is located in Taylor Hall (UC B001)
+
+                and offers tutoring and peer mentoring from
+
+                fellow students to anyone in a mathematics
+
+                course. Assistance with online homework
+
+                and software projects is available as well.
+    div.block.text-center.background-image.background-image-video(style="background-image: url('/img/index/video1.png'); background-color: #666666;")
+        div.wrapper-video
+            iframe(width="1024", height="576", src="https://www.youtube.com/embed/x-LCi2Pg4Z4", frameborder="0", allowfullscreen)
+    div.block.text-left(style="background-color: #ECECEC;")
+        div.text-block(style="width: 43%;")
+            div.title.text-left(style="color: black;") MAC Stat is here
+            pre(style="color: black;").
+                The MAC STAT is located in the library
+
+                (UL 2135D) and caters specifically to
+
+                statistics courses. It's the MAC as you
+
+                know it, just for statistics.
+        div.image.text-right(style="left: 47%; background-image: url('/img/index/block2.png');")
+    div.block.text-center.background-image.background-image-video(style="background-image: url('/img/index/video2.png');")
+        div.wrapper-video
+            iframe(width="1024", height="576", src="https://www.youtube.com/embed/HQykE8yDKIk", frameborder="0", allowfullscreen)
+    div#calendar-hours
+        div.title#hours-title
+            pre.
+                We're ready when
+                you are
+        table#hours
+            tbody
+                tr.walkinonline
+                    th.null
+                    th Walk In
+                    th Online
+                each day, dayName in hourDays
+                    tr
+                        td.day
+                            b #{dayName}
+                        td.time #{day.walkinHours}
+                        td.time #{day.onlineHours}
+        div#calendar
+        table.ui-datepicker-key.ui-datepicker-inline
+            tbody
+                tr
+                    th Regular Hours
+                    td
+                        a 7
+                tr
+                    th Exam Jam
+                    td.examJam(title="Exam Jam")
+                        a 14
+                tr
+                    th Closed
+                    td.ui-datepicker-unselectable.ui-state-disabled(title="MAC is closed") 21
+    div.block.text-right(style="background-color: #ECECEC;")
+        div.image.text-left(style="right: 52%; background-image: url('/img/index/block3.jpg');")
+        div.text-block(style="width: 48%;")
+            div.title.text-center
+                | We've got just what
+                br
+                | you needed
+            pre(style="color: black;").
+                We made several class resources just
+
+                for you. These resources include
+
+                instructive shorts, class hand-outs,
+
+                formula sheets, study guides,
+
+                practice examinations, and answer
+
+                keys. They're designed to prepare
+
+                you for mid-terms and final exams.
+            a#btn-resource(href="resources.php") CHECK 'EM OUT
