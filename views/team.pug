@@ -1,0 +1,28 @@
+extends ./include/layout.pug
+
+block body
+    div#container-header
+        img#header-background(src="img/team/background1.png", alt="")
+        pre.header-text.text-left.
+            meet the
+
+            <strong>students</strong>
+
+            who <strong>make</strong>
+
+            <strong>it happen</strong>
+        div#photo
+        div#container-overlay
+            img#overlay(src="img/team/background_overlap.png", alt="")
+    div#container-accordion
+        each level in levels
+            div.level-header
+                strong #{level.name}
+            div.level-body
+                each employee in level.employees
+                    div.employee-block(title=employee.biography)
+                        img(src="https://mac.iupui.edu/img/team-large/" + employee.username + ".jpg", alt="")
+                        div.employee-name
+                            | #{employee.firstName}
+                            br
+                            | #{employee.lastName}

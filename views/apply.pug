@@ -1,8 +1,8 @@
 extends ./include/layout.pug
 
 block body
-    div#header-no-image
-        pre.header-centered#headerText-no-image
+    div.container-header.no-image
+        pre.header-text.text-center.no-image
             strong Come work with us
     div.box#jobBox
         form#apply(action="/post/apply", method="POST")

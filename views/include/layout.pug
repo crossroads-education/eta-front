@@ -1,11 +1,11 @@
 extends ../../../../views/include/layout_university.pug
 
 block navbar
-    div#navBar
-        ul.navLinks
-            li#nav-image
+    div#container-navbar
+        ul.navbar-links
+            li#navbar-logo
                 a(href=baseurl)
-                    div.MAC_Logo
+                    div.logo-mac
             li
                 a(href=baseurl + "nexus") Live Help
             li
@@ -20,3 +20,63 @@ block navbar
                 a(href=baseurl + "press") Press
             li
                 a(href=baseurl + "contact") Contact
+
+block body
+    block body
+    div#container-footer
+        table
+            tr
+                td(colspan="4", style="text-align: left;")
+                    a(href="/")
+                        div.logo-mac.white
+                td(rowspan="2", style="width: 100%; padding-top: 10%;")
+                    a(target="_blank", href="https://facebook.com/MACatIUPUI")
+                        img(src=baseurl + "img/logos/facebook.png", alt="Facebook")
+                    a(target="_blank", href="https://twitter.com/MACatIUPUI")
+                        img(src=baseurl + "img/logos/twitter.png", alt="Twitter")
+            tr
+                td(style="border-right: none; padding-left: 60px;")
+                    ul.navbar-links-bottom
+                        li
+                            a(href=baseurl + "online") Live Help
+                        li
+                            a(href=baseurl + "resources") Resources
+                        li
+                            a(href=baseurl + "contact") Contact
+                        li
+                            a(href=baseurl + "events") Events
+                td(style="border-left: none; border-right: none;")
+                    ul.navbar-links-bottom
+                        li
+                            a(href=baseurl + "apply") Jobs
+                        li
+                            a(href=baseurl + "team") The Team
+                        li
+                            a(href=baseurl + "press") Press
+                        li
+                            a(href=baseurl + "partners") Partners
+                td(style="width: 35%; border-left: none;")
+                    ul.navbar-links-bottom-right
+                        li
+                            a(href="/itrac/track") Track Your Visits
+                        li
+                            a(href="/office/index", target="_blank") Employees
+                        li
+                            a(href="/resources/fliers/MACFall2015Flyer.pdf", target="_blank") MAC Flyer
+                        li
+                            a(href="/resources/fliers/STATFall2015Flyer.pdf", target="_blank") STAT Flyer
+                td
+                    pre.
+                        MAC:
+                        815 West Michigan Street
+                        Room B01
+                        Indianapolis, IN 46202
+
+                        p: <a href="tel:3172747898">317-274-7898</a>
+                    pre.
+                        MAC STAT:
+                        755 West Michigan Street
+                        Room 2135D
+                        Indianapolis, IN 46202
+
+                        p: <a href="tel:3172747235">317-274-7235</a>

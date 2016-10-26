@@ -1,2 +1,281 @@
 /* Pre-redesign from https://raw.githubusercontent.com/MAC-IUPUI/node-site/master/public/css/global.css */
-@font-face{font-family:"Avenir Next LT Pro";font-weight:900;font-style:normal;src:url('/fonts/AvenirNextLTPro-Bold.woff') format('woff'), url('/fonts/AvenirNextLTPro-Bold.ttf') format('truetype')}@font-face{font-family:"Avenir Next LT Pro";font-weight:700;font-style:normal;src:url('/fonts/AvenirNextLTPro-Demi.woff') format('woff'), url('/fonts/AvenirNextLTPro-Demi.ttf') format('truetype')}@font-face{font-family:"Avenir Next LT Pro";font-weight:700;font-style:italic;src:url('/fonts/AvenirNextLTPro-DemiIt.woff') format('woff'), url('/fonts/AvenirNextLTPro-DemiIt.ttf') format('truetype')}@font-face{font-family:"Avenir Next LT Pro";font-weight:400;font-style:normal;src:url('/fonts/AvenirNextLTPro-Regular.woff') format('woff'), url('/fonts/AvenirNextLTPro-Regular.ttf') format('truetype')}@font-face{font-family:"Avenir Next LT Pro";font-weight:400;font-style:italic;src:url('/fonts/AvenirNextLTPro-It.woff') format('woff'), url('/fonts/AvenirNextLTPro-It.ttf') format('truetype')}body{border:0;margin:0px auto;padding:0px;box-sizing:border-box;max-width:1200px;min-width:900px;width:100%}body,pre{font-family:'Avenir Next LT Pro', sans-serif}#navBar{width:100%;padding-bottom:0px;display:inline-block;position:relative}.navLinks{list-style-type:none;height:100%;width:100%;display:inline-block;text-align:center;padding-left:0;margin:0px}.navLinks>li{display:inline-block;margin-left:2%;margin-right:2%;text-align:center;height:45px;vertical-align:top;margin-bottom:0px;padding-top:30px;padding-bottom:5px}.navLinks>li>a{text-decoration:none;color:#000;font-weight:bold}.slimmenu a,a:active{text-decoration:none}.MAC_Logo{background-image:url('/img/logo.png');padding:26px 56px;background-size:cover;display:inline-block}.MAC_Logo_white{background-image:url('/img/logo_white.png');padding:26px 56px;background-size:cover;margin:20px 75px;display:inline-block}.navLinks>#nav-image{padding:13px 20px 0px;margin-left:5px;margin-right:0px}.background-image{background-size:cover}img{border:0;width:100%}.left{text-align:left}.right{text-align:right}.centered{text-align:center}#header{position:relative;border-width:0px;margin:0px;padding:0px}#header-no-image{position:relative;width:100%;display:block;padding:88px 45px;overflow:visible;border-bottom:2px solid #F0F0F0;border-top:2px solid #F0F0F0;box-sizing:border-box}#headerText{position:absolute;top:164px;text-transform:lowercase;font-style:italic;font-size:3em;line-height:40px;margin:0}#headerText-no-image{top:25px;text-transform:lowercase;font-style:italic;font-size:3em;line-height:40px;width:100%;margin:0}.header-left{left:45px;text-align:left}.header-right{right:45px;text-align:right}.header-centered{text-align:center;margin-left:0;margin-right:0}#headerText>strong,#headerText-no-image>strong{text-transform:uppercase;font-weight:900;font-size:1.4em;font-style:normal}#mac-footer table{border-collapse:collapse;background-color:#282828;color:#ffffff}#mac-footer td{vertical-align:top;border:1px solid #3C3C3C;text-align:center}#mac-footer a{text-decoration:none;color:#ffffff;outline:none}#mac-footer td>ul{padding:0 20px;text-align:left;list-style:none;font-weight:bold;line-height:50px}#mac-footer td:nth-of-type(3) > ul{font-weight:normal}#mac-footer td>pre{text-align:center;margin:40px 10px;padding:0;color:#ffffff}#mac-footer td>a>img{width:49px;height:49px;padding:20px}#mac-footer td:nth-child(3):nth-child(4){width:10%}.navLinks-bottom{width:100px}.navLinks-bottom-right{width:160px}hr{border-width:2px;border-style:solid}button.iu-button{display:block;clear:both;position:relative;width:180px;height:60px;border:2px solid #b30f1a;border-radius:25px;color:#000;font-size:1.1em;font-weight:bold;background-color:#FFF}
+
+@font-face {
+    font-family: "Avenir Next LT Pro";
+    font-weight: 900;
+    font-style: normal;
+    src: url('/fonts/AvenirNextLTPro-Bold.woff') format('woff'), url('/fonts/AvenirNextLTPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Avenir Next LT Pro";
+    font-weight: 700;
+    font-style: normal;
+    src: url('/fonts/AvenirNextLTPro-Demi.woff') format('woff'), url('/fonts/AvenirNextLTPro-Demi.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Avenir Next LT Pro";
+    font-weight: 700;
+    font-style: italic;
+    src: url('/fonts/AvenirNextLTPro-DemiIt.woff') format('woff'), url('/fonts/AvenirNextLTPro-DemiIt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Avenir Next LT Pro";
+    font-weight: 400;
+    font-style: normal;
+    src: url('/fonts/AvenirNextLTPro-Regular.woff') format('woff'), url('/fonts/AvenirNextLTPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Avenir Next LT Pro";
+    font-weight: 400;
+    font-style: italic;
+    src: url('/fonts/AvenirNextLTPro-It.woff') format('woff'), url('/fonts/AvenirNextLTPro-It.ttf') format('truetype');
+}
+
+body {
+    border: 0;
+    margin: 0px auto;
+    padding: 0px;
+    box-sizing: border-box;
+    max-width: 1200px;
+    min-width: 900px;
+    width: 100%;
+}
+
+#body {
+    margin-bottom: 0px !important;
+}
+
+body, pre {
+    font-family: 'Avenir Next LT Pro', sans-serif;
+}
+
+/*Previously #navBar*/
+#container-navbar {
+    width: 100%;
+    padding-bottom: 0px;
+    display: inline-block;
+    position: relative;
+}
+
+/*Previously .navLinks*/
+.navbar-links {
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding-left: 0;
+    margin: 0px;
+}
+
+/*Previously .navLinks*/
+.navbar-links > li {
+    display: inline-block;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+    height: 45px;
+    vertical-align: top;
+    margin-bottom: 0px;
+    padding-top: 30px;
+    padding-bottom: 5px;
+}
+
+/*Previously .navLinks*/
+.navbar-links > li > a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.navbar-links-bottom {
+    width: 100px;
+}
+
+.navbar-links-bottom-right {
+    width: 160px;
+}
+
+.slimmenu a, a:active {
+    text-decoration: none;
+}
+
+/*Previously .MAC_Logo*/
+.logo-mac {
+    background-image: url('/img/logo.png');
+    padding: 26px 56px;
+    background-size: cover;
+    display: inline-block;
+}
+
+/*Previously .MAC_Logo-white*/
+.logo-mac.white {
+    background-image: url('/img/logo_white.png');
+    margin: 20px 75px;
+}
+
+/*Previously .navLinks > #nav-image*/
+#navbar-logo {
+    padding: 13px 20px 0px;
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.background-image {
+    background-size: cover;
+}
+
+img {
+    border: 0;
+    width: 100%;
+}
+
+/*Previously .left*/
+.text-left {
+    text-align: left;
+}
+
+/*Previously .right*/
+.text-right {
+    text-align: right;
+}
+
+/*Previously .centered*/
+.text-center {
+    text-align: center;
+}
+
+/*Previously #header*/
+#container-header {
+    position: relative;
+    border-width: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Previously #header-no-image*/
+#container-header.no-image {
+    /*position: relative;*/
+    width: 100%;
+    display: block;
+    padding: 88px 45px;
+    overflow: visible;
+    border-bottom: 2px solid #F0F0F0;
+    border-top: 2px solid #F0F0F0;
+    box-sizing: border-box;
+}
+
+/*Previously #headerText*/
+.header-text {
+    position: absolute;
+    top: 164px;
+    text-transform: lowercase;
+    font-style: italic;
+    font-size: 3em;
+    line-height: 40px;
+    margin: 0;
+}
+
+/*Previously #headerText-no-image*/
+.header-text.no-image {
+    top: 25px;
+    text-transform: lowercase;
+    font-style: italic;
+    font-size: 3em;
+    line-height: 40px;
+    width: 100%;
+    margin: 0;
+}
+
+/*Previously .header-left*/
+.header-text.text-left {
+    left: 45px;
+}
+
+/*Previously .header-right*/
+.header-text.text-right {
+    right: 45px;
+}
+
+/*Previously .header-centered*/
+.header-text.text-center {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*Previously #headerText>strong, #headerText-no-image>strong*/
+.header-text > strong {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.4em;
+    font-style: normal;
+}
+
+/*Previously #mac-footer table*/
+#container-footer table {
+    border-collapse: collapse;
+    background-color: #282828;
+    color: #ffffff;
+}
+
+/*Previously #mac-footer td*/
+#container-footer td {
+    vertical-align: top;
+    border: 1px solid #3C3C3C;
+    text-align: center;
+}
+
+/*Previously #mac-footer a*/
+#container-footer a {
+    text-decoration: none;
+    color: #ffffff;
+    outline: none;
+}
+
+/*Previously #mac-footer td > ul*/
+#container-footer td > ul {
+    padding: 0 20px;
+    text-align: left;
+    list-style: none;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+/*Previously #mac-footer td > pre*/
+#container-footer td > pre {
+    text-align: center;
+    margin: 40px 10px;
+    padding: 0;
+    color: #ffffff;
+}
+
+/*Previously #mac-footer td > a > img*/
+#container-footer td > a > img {
+    width: 49px;
+    height: 49px;
+    padding: 20px;
+}
+
+hr {
+    border-width: 2px;
+    border-style: solid;
+}
+
+/*Previously button.iu-button*/
+button.btn-iu {
+    display: block;
+    clear: both;
+    position: relative;
+    width: 180px;
+    height: 60px;
+    border: 2px solid #b30f1a;
+    border-radius: 25px;
+    color: #000000;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #FFFFFF;
+}

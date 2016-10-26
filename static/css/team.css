@@ -1,0 +1,87 @@
+body {
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+}
+
+.level-header {
+	width: 100%;
+	background-color: #FFF;
+	color: #C72027;
+	text-align: center;
+	padding: 15px 0;
+	font-size: 1.3em;
+	border-bottom: 1px solid #a8a8a8;
+	outline: none;
+	cursor: pointer;
+}
+
+.employee-block {
+	width: 28%;
+	display: inline-block;
+	margin: 0;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: left;
+	padding: 40px 20px;
+	border-collapse: collapse;
+}
+
+.level-body {
+	padding: 0 80px;
+	text-align: left;
+	font-size: 0;
+	background-color: #F5F5F5;
+	border-bottom: 1px solid #a8a8a8;
+}
+
+img {
+	width: 57%;
+}
+
+.employee-block img {
+	border-radius: 50%;
+}
+
+#header-background {
+	width: 100%;
+}
+
+.employee-name {
+	width: 40%;
+	display: inline-block;
+	margin: 0;
+	vertical-align: text-bottom;
+	padding-bottom: 28px;
+}
+
+#photo {
+	position: absolute;
+	top: 30px;
+	right: 50px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+	width: 50%;
+	height: 91.5%;
+	clip: rect(1px, auto, auto, 0);
+	border-radius: 50%;
+}
+
+#container-overlay {
+	position: absolute;
+	top: 73.6%;
+	right: 20px;
+	width: 23.2%;
+	height: 26.4%;
+	overflow: hidden;
+}
+
+#overlay {
+	width: 100%;
+}
+
+.header-text.text-left {
+    color: #FFFFFF;
+}
