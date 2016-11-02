@@ -1,0 +1,30 @@
+extends ../include/layout.pug
+
+block body
+    div.box.container-student
+        a.btn-gray(href="https://cas.iu.edu/cas/logout") Log Out
+        h1 MAC Visit Report: #{name}
+        table
+            thead
+                tr
+                    th Course(s)
+                    th Date
+                    th Time In
+                    th Time Out
+                    th Total Hours
+            tbody
+                each visit in visits
+                    tr
+                        td #{visit.courses}
+                        td #{visit.date}
+                        td #{visit.timeIn}
+                        td #{visit.timeOut}
+                        td #{visit.totalHours}
+            tfoot
+                tr
+                    th(colspan="4") Total Hours
+                    td #{totalHours}
+                tr
+                    th(colspan="4") Total Visits
+                    td #{visits.length}
+        //- TODO: Look into necessity of re-implementing email-to-professor functionality
