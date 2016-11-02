@@ -1,0 +1,19 @@
+extends ./include/layout.pug
+
+block body
+    div#container-header
+        img(src="/img/online/header.jpg", alt="Students studying at the MAC")
+        pre.header-text.text-left(style="color: white;").
+            <strong>we bring</strong>
+
+            the <strong>tutoring</strong>
+
+            <strong>to you</strong>
+    ul.list-buttons
+        each room in rooms
+            li
+                span
+                    a(href=room.url, target="_blank") Room #{room.letter}
+                ul
+                    each course in room.courses
+                        li #{course}
