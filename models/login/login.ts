@@ -120,6 +120,7 @@ export class Model implements eta.Model {
                 });
             } else {
                 eta.logger.warn("Something is wrong with the CAS server: received response '" + response + "'.");
+                callback({ errcode: eta.http.InternalError });
             }
         }, false);
     }

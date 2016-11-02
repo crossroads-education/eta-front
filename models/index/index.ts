@@ -37,7 +37,7 @@ export class Model implements eta.Model {
                 } else {
                     hours = eta.time.getHoursTime(rows[i].open) + "-" + eta.time.getHoursTime(rows[i].close);
                 }
-                days[dayName][(rows[i].isWalkIn ? "walkin" : "online") + "Hours"] = hours;
+                (<any>days[dayName])[rows[i].isWalkIn ? "walkinHours" : "onlineHours"] = hours;
             }
             callback({
                 "hourDays": days
