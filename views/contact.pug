@@ -1,0 +1,23 @@
+extends ./include/layout.pug
+
+block body
+    div.no-image#container-header
+        img(src="/img/contact/header.png", alt="MAC Phone Number")
+        //- a(href="tel:+13172747898")
+        pre.header-text.no-image.text-center(style="position: static;")
+            strong SAY HELLO
+    div.container-box
+        form(method="POST", action="/post/contact")
+            label.label-form(for="input-name") Name:
+            input.poshy#input-name(type="text", name="name", required)
+            br
+            label.label-form(for="input-email") Email:
+            input.poshy#input-email(type="email", name="email", required)
+            br
+            label.label-form(for="input-phone") Phone:
+            input.poshy#input-phone(type="tel", name="phone")
+            br
+            label.label-form(for="input-message") Message:
+            textarea.poshy#input-message(name="message", required)
+            div.container-submit
+                button(type="submit") Submit
