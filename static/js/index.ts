@@ -36,6 +36,19 @@ export module index {
         $("#modal-video").on('hidden.bs.modal', function (e) {
             $("#iframe-video").attr("src", "");
         });
+        $(".navbar-collapse").on("show.bs.collapse", function() {
+            $("#navbar-container").addClass("navbar-background");
+            $("#navbar-button span").addClass("hidden");
+            $("#navbar-button i").removeClass("hidden");
+            $("#navbar-mobile-logo").addClass("white");
+        });
+
+        $(".navbar-collapse").on("hidden.bs.collapse", function() {
+            $("#navbar-container").removeClass("navbar-background");
+            $("#navbar-button span").removeClass("hidden");
+            $("#navbar-button i").addClass("hidden");
+            $("#navbar-mobile-logo").removeClass("white");
+        });
     })
 
     function renderVideo(source : string) : () => void {

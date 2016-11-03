@@ -48,14 +48,13 @@ export class Model implements eta.Model {
                     examJamRows[i].title = "Exam Jam @ " + eta.time.getMinuteTime(new Date(examJamRows[i].start));
                     closedRows.push(examJamRows[i]);
                 }
-                eta.logger.json(closedRows);
                 callback({
                     raw: JSON.stringify({
                         "success" : 1,
                         "result" : closedRows
                     })
-                })
-            })
+                });
+            });
         });
     }
 }

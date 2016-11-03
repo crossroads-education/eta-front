@@ -1,24 +1,29 @@
-.fa {
+.fa-play-circle-o {
     font-size: 3em;
-    padding-right: 33px;
-    padding-left: 15px;
+    padding-right: 30px;
+    padding-left: 18px;
     color: #333333 !important;
 }
 
-.header-container {
-    position: relative;
+.button-vod-mobile .fa {
+    padding-top: 6px;
+    font-size: 2.2em !important;
+    padding-left: 5px !important;
+
 }
 
 #hours-container p {
     margin-bottom: 100px;
 }
 
+
 .full-image {
-    z-index: -3;
+    z-index: -6;
     width: 100%;
+    height: 100%;
 }
 
-.navLinks {
+.container-navlinks-desktop {
     margin-top: 10px;
 }
 
@@ -48,6 +53,11 @@
     max-height: 48px;
 }
 
+#container-mobile-navbar {
+    position: absolute;
+    width: 100%;
+}
+
 .cal-cell1 {
     min-height: 0px !important;
     max-height: 48px;
@@ -60,18 +70,11 @@
 
 #btn-online {
     padding-top: 10px;
+    font-weight: 800 !important;
 }
 
 .cal-month-day {
     height: 48px !important;
-}
-
-.image-left {
-    background-image: url("../img/dudewithheadphones.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
 }
 
 .form-label {
@@ -79,9 +82,14 @@
 }
 
 #table-container {
-    /*margin-right: 6%;*/
     padding: 0px;
     margin-left: 15%;
+}
+
+#table-container-mobile {
+    padding: 0px;
+    float: none;
+    margin: 0 auto 25% auto;
 }
 
 #hours-table{
@@ -110,7 +118,19 @@
 
 .body-text {
     font-size: calc(10px + 1vw);
-    font-weight: lighter !important;
+    font-weight: 300 !important;
+    line-height: 1.3em;
+}
+
+@media (max-width: 720px) {
+    .body-text {
+        font-size: calc(9px + .8vw) !important;
+    }
+}
+
+.body-text-mobile {
+    font-size: calc(19px + .7vw);
+    font-weight: 300 !important;
     line-height: 1.6em;
 }
 
@@ -120,18 +140,32 @@ div.data-paragraph[data-paragraph="1"]{
     max-width: 45em;
 }
 
+div.data-paragraph-mobile[data-paragraph="1"]{
+    max-width: 23em;
+}
+
 div.data-paragraph[data-paragraph="2"]{
     margin-bottom: 1.923em;
     max-width: 50.5em;
+}
+
+div.data-paragraph-mobile[data-paragraph="2"]{
+    margin-bottom: 1.923em;
+    max-width: 23em;
 }
 
 div.data-paragraph[data-paragraph="3"]{
     max-width: 50em;
 }
 
+div.data-paragraph-mobile[data-paragraph="3"]{
+    max-width: 23em;
+}
+
 #cal-week-box {
   display: none !important;
 }
+
 
 img {
     padding: 0 0 0 0 !important;
@@ -145,6 +179,7 @@ img {
 
 #paragraph-container {
     margin-top: 250px;
+    margin-bottom: 15%;
 }
 
 #paragraph-container .body-header {
@@ -156,62 +191,184 @@ img {
     color: #2E5FB7;
     line-height: 1;
     letter-spacing: -.01px;
-    font-weight: 800 !important;
+    font-weight: 900 !important;
 }
 
+.body-header-mobile {
+    font-size: calc(24px + 3vw);
+    color: #2E5FB7;
+    line-height: 1;
+    font-weight: 900 !important;
+}
 
 #calendar-container {
   padding: 0px;
   margin-right: 10%;
 }
 
-#navBar {
-    position: absolute;
-    z-index: 4;
-    font-size: calc(5px + 1.45vh);
-    letter-spacing: 1.5px;
+#calendar-container-mobile {
+    float: none;
+    margin: 0 auto;
 }
 
+#container-navbar-desktop {
+    position: absolute;
+    z-index: 4;
+    font-size: calc(5px + .8vw);
+    letter-spacing: 1.5px;
+}
 
 .event-danger {
     background-color: #E8292D !important;
 }
 
-.btn-er {
-    z-index: 7 !important;
-    width: 33%;
-    height: calc(20px + 2.3vw);
+.btn-er-mobile {
+    height: calc(40px + 2.3vw);
     border-radius: 65px;
     background-color: #333333;
     border-color: #333333;
-    font-size: calc(6px + 1vw);
+    font-size: calc(10px + 1vw);
     letter-spacing: 1.5px;
+    font-weight: 900 !important;
+    border-width: 0 0 0 0 !important;
 }
 
+.btn-er-mobile:active {
+    background: #444444 !important;
+    border: #444444 !important;
+    text-decoration: none !important;
+}
+
+
+.btn-er {
+    padding-top: 20px !important;
+    z-index: 7 !important;
+    width: 33%;
+    height: 72px;
+    border-radius: 65px;
+    background-color: #333333;
+    border-color: #333333;
+    font-size: 1.2vw;
+    letter-spacing: 1.5px;
+    font-weight: 800 !important;
+    border-width: 0 0 0 0 !important;
+}
+
+.btn-er:hover {
+    background: #444444 !important;
+    border: #444444 !important;
+    text-decoration: none !important;
+    padding-top: 20px !important;
+    padding-bottom: 6px;
+}
 .button-container {
     z-index: 4;
     margin-top: 39%;
 }
 
+.button-container-mobile {
+    margin-top: 110%;
+}
+
+#btn-online-mobile {
+    width: 75%;
+    padding-top: 10px;
+}
+
+#description-container-mobile {
+    padding-right: 0px !important;
+}
+
+#description-container-mobile .body-header-mobile {
+    width: 7em;
+    margin-bottom: 9%;
+}
+
+#mobile-body-image {
+    margin-bottom: 10%;
+}
+
 .button-vod {
     background-color: #E7EBED !important;
     border-color: #E7EBED !important;
-    font-size: 2vh !important;
+    font-size: 1vw !important;
     color: black !important;
     border-radius: 40px;
 }
 
+.button-vod:hover {
+    background: #CCCCCC !important;
+    border-color: #CCCCCC !important;
+}
+
+.button-vod-mobile {
+    width: 100%;
+    background-color: #E7EBED !important;
+    border-color: #E7EBED !important;
+    font-size: 1em !important;
+    color: black !important;
+    border-radius: 40px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border-width: 0 0 0 0 !important;
+}
+
+.button-vod-mobile:active {
+    background: #CCCCCC !important;
+    border-color: #CCCCCC !important;
+}
+
+.break {
+    border-top: 1px solid #FEE3B2;
+    margin: 98px 0 98px 8.333%;
+}
+
+.button-vod-mobile span {
+    width: 100%;
+    margin: .833em auto;
+}
+
 .hours {
     font-size: 1.5em;
-    font-weight: lighter !important;
+    font-weight: 200 !important;
 }
+
+.hours-mobile {
+    font-size: calc(1em + 1vw);
+    font-weight: 200 !important;
+}
+
+@media (max-width: 375px){
+    .hours-mobile {
+        font-size: 1em !important;
+        font-weight: 200 !important;
+    }
+
+    .button-vod-mobile {
+        font-size: .81em !important;
+    }
+
+    .body-header-mobile {
+        font-size: 26px !important;
+    }
+
+
+}
+
+@media (max-width: 340px){
+    #resources-elements p.body-text-mobile {
+        font-size: 17px !important;
+        line-height: 1.2 !important;
+    }
+}
+
 .resources-container {
     position: absolute;
 }
 
 .hours-index {
     font-size: 1.313em;
-    font-weight: bold;
+    font-weight: 900 !important;
 }
 
 .modal-body {
@@ -237,6 +394,10 @@ img {
     padding-top: 12px;
 }
 
+#btn-resources-mobile {
+    padding-top: 12px;
+}
+
 #resources-container {
     position: relative;
     padding: 0 !important;
@@ -245,31 +406,74 @@ img {
 #hours-container {
     padding: 0px;
     margin-bottom: 230px;
-    margin-top: 197px;
+}
+
+@media (max-width: 425px){
+    #hours-container {
+        margin-bottom: 115px !important;
+    }
 }
 
 #resources-elements {
     position: absolute;
-    height: 50%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    padding: 0 0 !important;
 }
+
+.paragraphs {
+    padding: 0 0 !important;
+}
+
+@media (min-width: 375px) {
+    #resources-elements p.body-text-mobile {
+        font-size: 21.5px !important;
+        margin-bottom: 15% !important;
+    }
+
+    #resources-elements p.body-header-mobile {
+        font-size: 29px !important;
+    }
+}
+
 
 #resources-elements p.body-header {
     line-height: 1;
     margin-top: 1.7em;
     margin-bottom: .2em;
     color: white;
-    max-width: 9em;
+    max-width: 10em;
+}
+
+#resources-elements p.body-header-mobile {
+    line-height: 1;
+    margin-top: 1.4em;
+    margin-bottom: .2em;
+    color: white;
+    font-size: 26px;
 }
 
 #resources-elements p.body-text {
-    line-height: 1.15;
-    margin-bottom: 7%;
+    margin-bottom: 4%;
     color: white;
     max-width: 22em;
 }
 
+#resources-elements p.body-text-mobile {
+    margin-top: 3.5%;
+    margin-bottom: 9%;
+    color: white;
+    max-width: 15em;
+    line-height: normal !important;
+    font-size: 19px;
+}
 
 #btn-showreel {
+    margin-top: 4em;
+    margin-bottom: 1.1em;
+}
+
+#btn-showreel-mobile {
     margin-top: 4em;
     margin-bottom: 1.1em;
 }
@@ -279,4 +483,13 @@ img {
     float: right;
     padding-right: 17.5%;
     color: #333333 !important;
+    font-weight: 900 !important;
+}
+
+.vod-span-mobile {
+    margin-top: .833em;
+    float: right;
+    color: #333333 !important;
+    font-size: 1em;
+    font-weight: 900 !important;
 }
