@@ -1,0 +1,27 @@
+extends ../include/layout.pug
+
+block body
+    div.box.container-professor
+        a.btn-gray(href="https://cas.iu.edu/cas/logout") Log Out
+        //- Looking at all classes
+        h1 #{name}
+        h1 MAC Attendance Reports
+        table
+            thead
+                tr
+                    th Course
+                    th Section
+                    th Enrolled Count
+                    th Total Visits
+                    th Total Hours
+                    th Class Breakdown
+            tbody
+                each section in sections
+                    tr
+                        td #{section.course.subject} #{section.course.number}
+                        td #{section.number}
+                        td #{section.totalEnrolled}
+                        td #{section.visitCount}
+                        td #{section.visitDuration}
+                        td
+                            a(href="/track/professor?section=" + section.id) GO
