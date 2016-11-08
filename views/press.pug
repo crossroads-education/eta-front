@@ -1,0 +1,15 @@
+extends ./include/layout.old.pug
+
+block body
+    div.no-image#container-header
+        pre.header-text.text-center.no-image(style="position: static;").
+            <strong>we're making</strong>
+
+            <strong>headlines</strong>
+    div.container-articles
+        each article in articles
+            div.block-article
+                div.article-text
+                    div.article-title
+                        a(href=article.url) #{article.name}
+                    div.article-description #{article.body}

@@ -1,0 +1,35 @@
+extends ../include/layout.old.pug
+
+block body
+    div.box.container-athlete
+        a.btn-gray(href="https://cas.iu.edu/cas/logout") Log Out
+        h1 Athlete MAC Attendance
+        //-
+            label Hide rows with zero visits
+                input.input-hidezeroes(type="checkbox")
+        - var isSelected = isPastWeek ? {} : {"class": "selected"}
+        a.btn-gray.link-filter(href="/track/athlete")&attributes(isSelected) All Semester
+        - var isSelected = isPastWeek ? {"class": "selected"} : {}
+        a.btn-gray.link-filter(href="/track/athlete?isPastWeek=true")&attributes(isSelected) Past 7 Days
+        table
+            thead
+                tr
+                    th First Name
+                    th Last Name
+                    th University ID
+                    th Total Visits
+                    th Total Hours
+            tbody
+                each student in students
+                    -
+                        var classes = student.visitDuration == 0 ? {"class": "zero"} : {}
+                        if (student.isCurrent) { // they have an open visit for today
+                            classes["class"] += " current";
+                        }
+                    tr&attributes(classes)
+                        td(data-type="firstName") #{student.firstName}
+                        td(data-type="lastName") #{student.lastName}
+                        td(data-type="id") #{student.id}
+                        td(data-type="visitCount") #{student.visitCount ? student.visitCount : "0"}
+                        td(data-type="visitDuration") #{student.visitDuration ? student.visitDuration : "0"}
+    include ./single.pug

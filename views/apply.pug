@@ -1,15 +1,17 @@
-extends ./include/layout.pug
+extends ./include/layout.old.pug
 
 block body
-    div#header-no-image
-        pre.header-centered#headerText-no-image
+    div.no-image#container-header
+        pre.header-text.text-center.no-image
             strong Come work with us
-    div.box#jobBox
-        form#apply(action="/post/apply", method="POST")
-            p#errors
-            p#message
-            p(style="font-weight: bold;") You are applying as "#{name}".
-            div#level-wrapper
+    div.box.container-all
+        form(action="/post/apply", method="POST")
+            div.container-levels
+                if error
+                    span.label-error An error occurred: #{error}
+                if success
+                    span.label-success Successfully submitted application.
+                p.label-name You are logged in as #{firstName} #{lastName}.
                 if isAvailable
                     for position in positions
                         div.level-block
@@ -20,15 +22,9 @@ block body
                             if position.courses
                                 for course in position.courses.split(",")
                                     p #{course}
-                else
+                - else
                     div.level-block.no-positions
                         p
                             strong No positions currently available.
-            div#release
-                p
-                    strong By checking the box below,
-                    br
-                    | !{agreementText}
-                label(for="infoRelease") *I agree
-                input#infoRelease(type="checkbox", title="Information release", required="true")
-                button#applyButton(type="submit") Apply
+            div.container-submit
+                button.btn-apply(type="submit") Apply

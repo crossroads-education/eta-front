@@ -1,0 +1,86 @@
+th {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse !important;
+    margin: 0;
+}
+
+th, td {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 40px;
+    margin: 0 0 20px 0;
+    clear: both;
+}
+
+.wrapper {
+    margin: auto;
+}
+
+.btn-gray {
+    border: 2px solid #E7E7E7;
+    background: #EBEBEB;
+    padding: 5px;
+    float: right;
+    min-width: 65px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.btn-gray.link-filter {
+    margin: 0 0 8px 8px;
+}
+
+.btn-gray.link-filter.selected {
+    border: 2px solid #717171;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    display: block;
+    margin: 10px auto;
+    float: none;
+    clear: both;
+}
+
+.container-professor-list,
+.container-student,
+.dataTables_wrapper {
+    display: block;
+    vertical-align: top;
+}
+
+.container-professor-list,
+.container-student {
+    max-width: 800px;
+    margin: 40px;
+}
+
+.container-professor-section,
+.container-single,
+.container-athlete {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-professor-section table,
+.container-single table,
+.container-athlete table tr {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.container-single.empty {
+    display: none;
+}
+
+tr.current {
+    background-color: lime !important;
+}

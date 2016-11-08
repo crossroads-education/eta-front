@@ -1,0 +1,35 @@
+.container-articles {
+	position: relative;
+	padding: 20px 70px;
+	background-color: #F0F0F0;
+}
+
+.block-article {
+	border-bottom: 1px solid #FFF;
+    padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.block-article:nth-last-child(1) {
+	border-bottom: none;
+}
+
+.article-title {
+	margin-bottom: 5px;
+}
+
+.article-title a {
+	font-weight: bold;
+	font-size: 1.3em;
+	color: #B10F1A;
+	text-decoration: none;
+}
+
+.article-description {
+	font-size: 1em;
+}
+
+hr {
+	color: #BEBEBE;
+	margin-bottom: 20px;
+}
