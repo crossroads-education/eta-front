@@ -1,8 +1,10 @@
 import "datatables.net";
 
-export module student {
+import "track/single";
+
+export module section {
     $(document).ready(function() {
-        (<any>$(".container-student table")).DataTable({
+        (<any>$(".container-professor-section table")).DataTable({
             "paging": true,
             "info": false,
             "ordering": true,

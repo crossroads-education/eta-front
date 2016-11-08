@@ -1,0 +1,40 @@
+extends ../include/layout.pug
+
+block body
+    div.box.container-professor-section
+        span.data(data-name="sectionID", data-value=section.id, style="display: none;")
+        a.btn-gray#btn-back(href="/track/professor") Back
+        -
+            var csvUrl = "/track/csv?section=" + section.number
+            if (isPastWeek) {
+                csvUrl += "isPastWeek=true";
+            }
+        a.btn-gray(href="https://cas.iu.edu/cas/logout") Log Out
+        a.btn-gray(href=csvUrl) Export as CSV
+        h1 Class: #{section.course.subject} #{section.course.number}
+        h1 Section: #{section.number}
+        //-
+            label Hide rows with zero visits
+                input.input-hidezeroes(type="checkbox")
+        - var isSelected = isPastWeek ? {} : {"class": "selected"}
+        a.btn-gray.link-filter(href="/track/section?id=" + section.id)&attributes(isSelected) All Semester
+        - var isSelected = isPastWeek ? {"class": "selected"} : {}
+        a.btn-gray.link-filter(href="/track/section?isPastWeek=true&id=" + section.id)&attributes(isSelected) Past 7 Days
+        table
+            thead
+                tr
+                    th First Name
+                    th Last Name
+                    th University ID
+                    th Total Visits
+                    th Total Hours
+            tbody
+                each student in students
+                    - var isHiddenZero = student.visitDuration == 0 ? {"class": "zero"} : {}
+                    tr&attributes(isHiddenZero)
+                        td(data-type="firstName") #{student.firstName}
+                        td(data-type="lastName") #{student.lastName}
+                        td(data-type="id") #{student.id}
+                        td(data-type="visitCount") #{student.visitCount ? student.visitCount : "0"}
+                        td(data-type="visitDuration") #{student.visitDuration ? student.visitDuration : "0"}
+    include ./single.pug

@@ -1,7 +1,7 @@
 extends ../include/layout.pug
 
 block body
-    div.box.container-professor
+    div.box.container-professor-list
         a.btn-gray(href="https://cas.iu.edu/cas/logout") Log Out
         //- Looking at all classes
         h1 #{name}
@@ -24,4 +24,4 @@ block body
                         td #{section.visitCount}
                         td #{section.visitDuration}
                         td
-                            a(href="/track/professor?section=" + section.id) GO
+                            a(href="/track/section?id=" + section.id) GO

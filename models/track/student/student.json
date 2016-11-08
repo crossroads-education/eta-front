@@ -1,6 +1,7 @@
 {
   "css": [
-    "https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.7/css/jquery.dataTables.min.css"
+    "https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.7/css/jquery.dataTables.min.css",
+    "/css/track/global.css"
   ],
   "requiresLogin": true
 }

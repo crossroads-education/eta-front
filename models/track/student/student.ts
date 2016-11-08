@@ -24,7 +24,7 @@ export class Model implements eta.Model {
                 FROM
                     Visit
                         RIGHT JOIN Section ON
-                            Visit.section LIKE CONCAT('%', Section.id, '%')
+                            Visit.section REGEXP Section.id
                         RIGHT JOIN Course ON
                             Section.course = Course.id
                 WHERE
