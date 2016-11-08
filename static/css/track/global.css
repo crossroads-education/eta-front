@@ -80,3 +80,7 @@ h1 {
 .container-single.empty {
     display: none;
 }
+
+tr.current {
+    background-color: lime !important;
+}

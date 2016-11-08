@@ -1,9 +1,8 @@
 export module single {
     $(document).ready(function() {
         let studentTable: DataTables.DataTable;
-        $(".container-professor-section tr").on("click", function() {
+        $(".container-professor-section,.container-athlete tr").on("click", function() {
             let $this: JQuery = $(this);
-            console.log($this);
             let studentID: string = $this.find("td[data-type='id']").text();
             let sectionID: string = $(".data[data-name='sectionID']").data("value");
             let params: any = {
