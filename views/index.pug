@@ -1,0 +1,6 @@
+extends ./include/layout.pug
+block body
+    if !isMobile
+        include ./include/index/desktop.pug
+    - else
+        include ./include/index/mobile.pug
