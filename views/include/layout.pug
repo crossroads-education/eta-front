@@ -1,82 +1,148 @@
 extends ../../../../views/include/layout_university.pug
 
-block navbar
-    div#container-navbar
-        ul.navbar-links
-            li#navbar-logo
+block header
+    link(rel="icon", href=baseurl + "img/favicon.ico")
+
+mixin mobileNavBar
+    div#container-mobile-navbar
+        nav.navbar.navbar-default#mobile-nav
+            div.container-fluid#navbar-container
+                div.navbar-header#navbar-header
+                    a(href=baseurl)
+                        div.mac-logo#navbar-mobile-logo
+                    button.navbar-toggle.collapsed#navbar-button(type="button", data-toggle="collapse", data-target="#collapse-elements")
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                        i.fa.fa-times.hidden(aria-hidden="true")
+                    a.navbar-brand
+                div.collapse.navbar-collapse#collapse-elements
+                    ul.nav.navbar#navbar-list
+                        li.navbar-element.text-center
+                            a(href=baseurl + "online") Live Help
+                        li.navbar-element.text-center
+                            a(href=baseurl + "resources") Resources
+                        li.navbar-element.text-center
+                            a(href=baseurl + "team") The Team
+                        li.navbar-element.text-center
+                            a(href=baseurl + "press") Press
+                        li.navbar-element-small.text-center
+                            a(href= baseurl + "contact") Contact
+                        li.navbar-element-small.text-center
+                            a(href=baseurl + "apply") Jobs
+                        li.navbar-element-small.text-center
+                            a.telephone-ref(href="tel:317-274-7898")  P: 317-274-7898
+        block
+
+mixin mobileFooter
+    div#container-footer-mobile
+        div#mobile-links-container
+            div.social-media-mobile
+                a(href="https://twitter.com/MACatIUPUI", target="_blank")
+                    img.mac-twitter(src="../img/twitter.png")
+                a(href="https://www.facebook.com/MACatIUPUI", target="_blank")
+                    img.mac-facebook(src="../img/facebook.png")
+            a(href=baseurl)
+                div#footer-logo-mobile
+        hr.mobile-break.col-xs-12
+        table#mobile-footer-table
+            tr
+                div.text-center
+                    a.btn.btn-primary.btn-er-mobile#btn-employee-mobile(href=baseurl + "office") Employee portal
+                td.footer-column1
+                    ul
+                        li
+                            a.list-text(href=baseurl + "online") Live Help
+                        li
+                            a.list-text(href=baseurl + "resources") Resources
+                        li
+                            a.list-text(href=baseurl + "apply") Jobs
+                td.footer-column2
+                    ul
+                        li
+                            a.list-text(href=baseurl + "team") The Team
+                        li
+                            a.list-text(href=baseurl + "press") Press
+                        li
+                            a.list-text(href=baseurl + "contact") Contact
+                td.footer-column3-mobile
+                    ul
+                        li
+                            a.list-text(href=baseurl) Track your visits
+                        li
+                            a.list-text(href=baseurl) Flyer 2016
+        hr.mobile-break.col-xs-12
+        a.telephone-ref.footer-telephone(href="tel:317-274-7898") P: (317) 274-7898
+        p.list-text.address-mobile MAC:
+            br
+            |815 W. Michigan St. Room B01 Indianapolis, IN 46202
+        a.telephone-ref.footer-telephone(href="tel:317-274-7898") P: (317) 274-7235
+        p.list-text.address-mobile#stat-address-mobile MAC Stat:
+            br
+            |755 West Michigan Street Room 2135D Indianapolis, IN 46202
+
+
+
+mixin desktopNavBar
+    div#container-navbar-desktop
+        ul.container-navlinks-desktop
+            li#nav-image
                 a(href=baseurl)
-                    div.logo-mac
+                    div.mac-logo
             li
                 a(href=baseurl + "online") Live Help
             li
                 a(href=baseurl + "resources") Resources
             li
-                a(href=baseurl + "apply") Apply
-            li
-                a(href=baseurl + "events") Events
+                a(href=baseurl + "apply") Jobs
             li
                 a(href=baseurl + "team") The Team
             li
-                a(href=baseurl + "press") Press
-            li
-                a(href=baseurl + "contact") Contact
+                a(href= baseurl + "contact") Contact
+        block
 
-block body
-    block body
-    div#container-footer
+mixin desktopFooter
+    div#container-footer-desktop
         table
             tr
-                td(colspan="4", style="text-align: left;")
-                    a(href="/")
-                        div.logo-mac.white
-                td(rowspan="2", style="width: 100%; padding-top: 10%;")
-                    a(target="_blank", href="https://facebook.com/MACatIUPUI")
-                        img(src=baseurl + "img/logos/facebook.png", alt="Facebook")
-                    a(target="_blank", href="https://twitter.com/MACatIUPUI")
-                        img(src=baseurl + "img/logos/twitter.png", alt="Twitter")
+                td.row-image(colspan="3")
+                    a(href=baseurl)
+                        div#footer-logo
             tr
-                td(style="border-right: none; padding-left: 60px;")
-                    ul.navbar-links-bottom
+                td.footer-column1
+                    ul.footer-column1-list
                         li
-                            a(href=baseurl + "online") Live Help
+                            a.list-text(href=baseurl + "online") Live Help
                         li
-                            a(href=baseurl + "resources") Resources
+                            a.list-text(href=baseurl + "resources") Resources
                         li
-                            a(href=baseurl + "contact") Contact
+                            a.list-text(href=baseurl + "apply") Jobs
+                td.footer-column2
+                    ul.footer-column2-list
                         li
-                            a(href=baseurl + "events") Events
-                td(style="border-left: none; border-right: none;")
-                    ul.navbar-links-bottom
+                            a.list-text(href=baseurl + "team") The Team
                         li
-                            a(href=baseurl + "apply") Jobs
+                            a.list-text(href=baseurl + "contact") Contact
+                td.footer-column3.text-center
+                    a.btn.btn-primary.btn-er#btn-employee(href=baseurl + "office") Employee portal
+                    ul
                         li
-                            a(href=baseurl + "team") The Team
+                            a.list-text(href="https://mac.iupui.edu/TutorTrac/macTracStudent.php") Track your visits
                         li
-                            a(href=baseurl + "press") Press
-                        li
-                            a(href=baseurl + "partners") Partners
-                td(style="width: 35%; border-left: none;")
-                    ul.navbar-links-bottom-right
-                        li
-                            a(href="/itrac/track") Track Your Visits
-                        li
-                            a(href="/office/index", target="_blank") Employees
-                        li
-                            a(href="/resources/fliers/MACFall2015Flyer.pdf", target="_blank") MAC Flyer
-                        li
-                            a(href="/resources/fliers/STATFall2015Flyer.pdf", target="_blank") STAT Flyer
-                td
-                    pre.
-                        MAC:
-                        815 West Michigan Street
-                        Room B01
-                        Indianapolis, IN 46202
-
-                        p: <a href="tel:3172747898">317-274-7898</a>
-                    pre.
-                        MAC STAT:
-                        755 West Michigan Street
-                        Room 2135D
-                        Indianapolis, IN 46202
-
-                        p: <a href="tel:3172747235">317-274-7235</a>
+                            a.list-text(href) MAC Flyer 2016
+                td.footer-column4(rowspan="2")#address-container
+                    p.list-text.address
+                        |815 West Michigan Street
+                        br
+                        |Room B01
+                        br
+                        |Indianapolis, IN 46202
+                        br
+                        br
+                        |p:
+                        a.telephone-ref(href="tel:317-274-7898")#footer-telephone  317-274-7898
+                    div.socialMedia
+                        a(href="https://twitter.com/MACatIUPUI", target="_blank")
+                            img.mac-twitter(src="../img/twitter.png")
+                        a(href="https://www.facebook.com/MACatIUPUI", target="_blank")
+                            img.mac-facebook(src="../img/facebook.png")

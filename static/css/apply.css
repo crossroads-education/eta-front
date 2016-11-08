@@ -274,3 +274,7 @@ table.ui-datepicker-calendar td {
 .label-name {
     font-weight: 600;
 }
+
+.btn-apply {
+    cursor: pointer;
+}

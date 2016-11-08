@@ -4,44 +4,59 @@ import * as express from "express";
 
 export class Model implements eta.Model {
     public render(req: express.Request, res: express.Response, callback: (env: { [key: string]: any }) => void): void {
-        let currentTerm: number = eta.term.getCurrent().id;
+        if (!req.query.term) {
+            req.query.term = eta.term.getCurrent().id;
+        }
+        let os: string = (<any>eta.http.getUserAgent(req).os).family;
+        let isMobile: boolean = false;
+        if (os == "Android" || os == "iOS") {
+            isMobile = true;
+        }
         let sql: string = `
             SELECT
-                HoursOfOperation.center = 2 AS isWalkIn,
-                HoursOfOperation.day,
-                HoursOfOperation.open,
-                HoursOfOperation.close
-            FROM
-                HoursOfOperation
-            WHERE
-                HoursOfOperation.term = 9 AND
-                HoursOfOperation.center IN (2, 3)`;
-        eta.db.query(sql, currentTerm, (err: eta.DBError, rows: any[]) => {
-            let days: {
-                [day: string]: {
-                    walkinHours: string;
-                    onlineHours: string;
-                }
-            } = {};
+                floor.day as day,
+                CONCAT(CURDATE(), ' ', floor.open) as floorOpen,
+                CONCAT(CURDATE(), ' ', floor.close) as floorClose,
+                CONCAT(CURDATE(), ' ', online.open) as onlineOpen,
+                CONCAT(CURDATE(), ' ', online.close) as onlineClose
+            FROM (
+                SELECT
+                    day,
+                    open,
+                    close
+                FROM
+                    HoursOfOperation
+                WHERE
+                    term = ? AND
+                    center = 2) AS floor
+                        LEFT JOIN (
+                            SELECT
+                                day,
+                                open,
+                                close
+                            FROM
+                                HoursOfOperation
+                            WHERE
+                                term = ? AND
+                                center = 3) AS online
+                            ON floor.day = online.day`;
+        eta.db.query(sql, [req.query.term, req.query.term], (err: eta.DBError, rows: any[]) => {
+            if (err) {
+                eta.logger.dbError(err);
+                callback({ errcode: eta.http.InternalError });
+                return;
+            }
+            let fieldNames: string[] = ["floorOpen", "floorClose", "onlineOpen", "onlineClose"];
             for (let i: number = 0; i < rows.length; i++) {
-                let dayName: string = eta.time.getNameFromDayOfWeek(rows[i].day);
-                if (!days[dayName]) {
-                    days[dayName] = {
-                        "walkinHours": "",
-                        "onlineHours": ""
-                    };
+                rows[i].day = eta.time.shortDaysOfWeek[i];
+                for (let j: number = 0; j < fieldNames.length; j++) {
+                    rows[i][fieldNames[j]] = eta.time.getShortTime(new Date(rows[i][fieldNames[j]]));
                 }
-                let hours: string;
-                if (rows[i].open == "00:00:00" && rows[i].close == "00:00:00") {
-                    hours = "Closed";
-                } else {
-                    hours = eta.time.getHoursTime(rows[i].open) + "-" + eta.time.getHoursTime(rows[i].close);
-                }
-                (<any>days[dayName])[rows[i].isWalkIn ? "walkinHours" : "onlineHours"] = hours;
             }
             callback({
-                "hourDays": days
+                rows: rows,
+                isMobile: isMobile
             });
-        });
+        })
     }
 }

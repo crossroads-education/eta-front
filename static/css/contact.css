@@ -73,7 +73,7 @@ textarea.poshy {
 	border-top: 1px solid #f0f0f0;
 	float: left;
 	clear: both;
-	width: 100%;
-	padding: 10px 45%;
+	/*width: 100%;*/
+	padding: 10px 40%;
 	text-align: center;
 }

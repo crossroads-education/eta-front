@@ -1,274 +1,495 @@
-body, html {
-	border-collapse: collapse;
+.fa-play-circle-o {
+    font-size: 3em;
+    padding-right: 30px;
+    padding-left: 18px;
+    color: #333333 !important;
 }
 
-#container-header img {
-    display: block;
+.button-vod-mobile .fa {
+    padding-top: 6px;
+    font-size: 2.2em !important;
+    padding-left: 5px !important;
+
 }
 
-.block {
-	position: relative;
-	margin: 0;
+#hours-container p {
+    margin-bottom: 100px;
 }
 
-.content-block {
-	display: inline-block;
-}
 
-.background-image-video {
-	padding: 30px 15%;
-}
-
-.text-block {
-	text-align: center;
-	display: inline-block;
-	font-size: 1.3em;
-}
-
-.text-block > pre {
-	margin: 40px 50px 100px 70px;
-	line-height: 20px;
-	text-align: left;
-}
-
-.title {
-	font-weight: 900;
-	font-size: 1.3em;
-	margin: 100px 70px 0 70px;
-	text-transform: uppercase;
-}
-
-.title.text-center {
-	margin-left: 30px;
-}
-
-/*Previously .image-left and .image-right*/
-.image {
-    top: 0;
-	bottom: 0;
-	display: block;
-	position: absolute;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-/*Previously .image-left*/
-.image.text-left {
-    left: 0;
-}
-
-/*Previously .image-right*/
-.image.text-right {
-    right: 0;
-}
-
-/*Previously .videoWrapper*/
-.wrapper-video {
-	position: relative;
-    padding-bottom: 56%; /* 16:9 */
-    padding-top: 30px;
-    height: 0;
-    width: 100%;
-    margin: 0 auto 0 auto;
-}
-
-/*Previously .videoWrapper iframe*/
-.wrapper-video iframe {
-	position: absolute;
-    top: 0;
-    left: 0;
+.full-image {
+    z-index: -6;
     width: 100%;
     height: 100%;
 }
 
-table td {
-	text-align: center;
-}
-
-/*Previously #hoursCalendar*/
-#calendar-hours {
-	background-image: url("/img/index/calendar.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: right center;
-	width: 100%;
-	height: 866px;
-}
-
-.ui-datepicker-calendar {
-	width: 480px;
-	height: 200px;
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/*Previously #hoursCalendar > * */
-#calendar-hours > * {
-	margin-left: 10%;
-	margin-right: auto;
-}
-
-.walkinonline {
-	color: #b30f1a;
-}
-
-.walkinonline>th {
-	border-bottom: 1px solid #000;
-	border-top: 1px solid #000;
+.container-navlinks-desktop {
+    margin-top: 10px;
 }
 
 #calendar {
-	width: 480px;
-	margin-top: 100px;
+    max-width: 435px;
+    border : 0px !important;
+    border-bottom: 0px !important;
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
 }
 
-.ui-datepicker-calendar > tbody > tr > td, .ui-datepicker-calendar > thead > tr > th {
-	padding-left: 15px;
-	padding-right: 15px;
+.cal-year-box [class*="span"],.cal-month-box [class*="cal-cell"] {
+    border-right: 0px !important;
 }
 
-#hours {
-	border-collapse: collapse;
-    width: 350px;
-	height: 200px;
-	border-collapse: collapse;
-	border-spacing: 0;
+.cal-year-box .row-fluid,.cal-month-box .cal-row-fluid {
+    border-bottom: 0px !important
 }
 
-#hours-title {
-	text-align: center;
-	width: 300px;
-	font-size: 1.7em;
-	padding-top: 30px;
-	text-transform: uppercase;
-	margin-top: 0;
+.cal-month-box {
+    border: 0px !important;
+    max-height: 200px;
 }
 
-.day {
-	width: 20px;
-	color: black;
+.cal-row-fluid {
+    max-height: 48px;
 }
 
-.ui-datepicker-inline {
-    max-width: 480px;
+#container-mobile-navbar {
+    position: absolute;
+    width: 100%;
+}
+
+.cal-cell1 {
+    min-height: 0px !important;
+    max-height: 48px;
+}
+
+.cal-month-box .cal-day-today span[data-cal-date] {
+    font-size: 1.2em !important;
+}
+
+
+#btn-online {
+    padding-top: 10px;
+    font-weight: 800 !important;
+}
+
+.cal-month-day {
+    height: 48px !important;
+}
+
+.form-label {
+    padding: 0px !important;
+}
+
+#table-container {
+    padding: 0px;
+    margin-left: 15%;
+}
+
+#table-container-mobile {
+    padding: 0px;
+    float: none;
+    margin: 0 auto 25% auto;
+}
+
+#hours-table{
+    table-layout: fixed;
+    border: 0 !important;
+}
+
+#hours-table th{
+    border-bottom: 0 !important;
+}
+
+#hours-table td{
+    width: 120px;
+    border-top: 0 !important;
+}
+
+.text-block {
+    float: right;
+    margin-top: 196px;
+
+}
+
+.block {
+    padding-left: 0px;
+}
+
+.body-text {
+    font-size: calc(10px + 1vw);
+    font-weight: 300 !important;
+    line-height: 1.3em;
+}
+
+@media (max-width: 720px) {
+    .body-text {
+        font-size: calc(9px + .8vw) !important;
+    }
+}
+
+.body-text-mobile {
+    font-size: calc(19px + .7vw);
+    font-weight: 300 !important;
+    line-height: 1.6em;
+}
+
+div.data-paragraph[data-paragraph="1"]{
+    margin-top: 3.605em;
+    margin-bottom: 1.923em;
+    max-width: 45em;
+}
+
+div.data-paragraph-mobile[data-paragraph="1"]{
+    max-width: 23em;
+}
+
+div.data-paragraph[data-paragraph="2"]{
+    margin-bottom: 1.923em;
+    max-width: 50.5em;
+}
+
+div.data-paragraph-mobile[data-paragraph="2"]{
+    margin-bottom: 1.923em;
+    max-width: 23em;
+}
+
+div.data-paragraph[data-paragraph="3"]{
+    max-width: 50em;
+}
+
+div.data-paragraph-mobile[data-paragraph="3"]{
+    max-width: 23em;
+}
+
+#cal-week-box {
+  display: none !important;
+}
+
+
+img {
+    padding: 0 0 0 0 !important;
+}
+
+#description-container {
+    padding-right: 0px;
+    margin-top: 10%;
+    z-index: -4;
+}
+
+#paragraph-container {
+    margin-top: 250px;
+    margin-bottom: 15%;
+}
+
+#paragraph-container .body-header {
+    max-width: 8em;
+}
+
+.body-header {
+    font-size: calc(30px + 3vw);
+    color: #2E5FB7;
+    line-height: 1;
+    letter-spacing: -.01px;
+    font-weight: 900 !important;
+}
+
+.body-header-mobile {
+    font-size: calc(24px + 3vw);
+    color: #2E5FB7;
+    line-height: 1;
+    font-weight: 900 !important;
+}
+
+#calendar-container {
+  padding: 0px;
+  margin-right: 10%;
+}
+
+#calendar-container-mobile {
+    float: none;
     margin: 0 auto;
-	border-bottom: 1px solid #000;
 }
 
-.ui-datepicker-calendar > thead > tr {
-	color: #b30f1a;
+#container-navbar-desktop {
+    position: absolute;
+    z-index: 4;
+    font-size: calc(5px + .8vw);
+    letter-spacing: 1.5px;
 }
 
-.ui-datepicker-header {
+.event-danger {
+    background-color: #E8292D !important;
+}
+
+.btn-er-mobile {
+    height: calc(40px + 2.3vw);
+    border-radius: 65px;
+    background-color: #333333;
+    border-color: #333333;
+    font-size: calc(10px + 1vw);
+    letter-spacing: 1.5px;
+    font-weight: 900 !important;
+    border-width: 0 0 0 0 !important;
+}
+
+.btn-er-mobile:active {
+    background: #444444 !important;
+    border: #444444 !important;
+    text-decoration: none !important;
+}
+
+
+.btn-er {
+    padding-top: 20px !important;
+    z-index: 7 !important;
+    width: 33%;
+    height: 72px;
+    border-radius: 65px;
+    background-color: #333333;
+    border-color: #333333;
+    font-size: 1.2vw;
+    letter-spacing: 1.5px;
+    font-weight: 800 !important;
+    border-width: 0 0 0 0 !important;
+}
+
+.btn-er:hover {
+    background: #444444 !important;
+    border: #444444 !important;
+    text-decoration: none !important;
+    padding-top: 20px !important;
+    padding-bottom: 6px;
+}
+.button-container {
+    z-index: 4;
+    margin-top: 39%;
+}
+
+.button-container-mobile {
+    margin-top: 110%;
+}
+
+#btn-online-mobile {
+    width: 75%;
+    padding-top: 10px;
+}
+
+#description-container-mobile {
+    padding-right: 0px !important;
+}
+
+#description-container-mobile .body-header-mobile {
+    width: 7em;
+    margin-bottom: 9%;
+}
+
+#mobile-body-image {
+    margin-bottom: 10%;
+}
+
+.button-vod {
+    background-color: #E7EBED !important;
+    border-color: #E7EBED !important;
+    font-size: 1vw !important;
+    color: black !important;
+    border-radius: 40px;
+}
+
+.button-vod:hover {
+    background: #CCCCCC !important;
+    border-color: #CCCCCC !important;
+}
+
+.button-vod-mobile {
+    width: 100%;
+    background-color: #E7EBED !important;
+    border-color: #E7EBED !important;
+    font-size: 1em !important;
+    color: black !important;
+    border-radius: 40px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border-width: 0 0 0 0 !important;
+}
+
+.button-vod-mobile:active {
+    background: #CCCCCC !important;
+    border-color: #CCCCCC !important;
+}
+
+.break {
+    border-top: 1px solid #FEE3B2;
+    margin: 98px 0 98px 8.333%;
+}
+
+.button-vod-mobile span {
+    width: 100%;
+    margin: .833em auto;
+}
+
+.hours {
+    font-size: 1.5em;
+    font-weight: 200 !important;
+}
+
+.hours-mobile {
+    font-size: calc(1em + 1vw);
+    font-weight: 200 !important;
+}
+
+@media (max-width: 375px){
+    .hours-mobile {
+        font-size: 1em !important;
+        font-weight: 200 !important;
+    }
+
+    .button-vod-mobile {
+        font-size: .81em !important;
+    }
+
+    .body-header-mobile {
+        font-size: 26px !important;
+    }
+
+
+}
+
+@media (max-width: 340px){
+    #resources-elements p.body-text-mobile {
+        font-size: 17px !important;
+        line-height: 1.2 !important;
+    }
+}
+
+.resources-container {
+    position: absolute;
+}
+
+.hours-index {
+    font-size: 1.313em;
+    font-weight: 900 !important;
+}
+
+.modal-body {
     position: relative;
-}
-
-.ui-datepicker-calendar > thead {
-	border-bottom: 1px solid #000;
-	border-top: 1px solid #000;
-}
-
-.ui-datepicker-prev, .ui-datepicker-next {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    cursor: pointer;
-    background-image: url('/img/index/arrow.png');
-    background-repeat: no-repeat;
-    line-height: 600%;
+    height: 0;
     overflow: hidden;
+    padding-bottom: 56.25%;
 }
 
-.ui-datepicker-prev {
+.modal-body iframe {
     position: absolute;
-    left: 120px;
-    cursor: pointer !important;
-	background-position: center -30px;
-	float: left;
-	bottom: -4px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+    padding-right: 40px;
+    padding-bottom: 40px;
 }
 
-.ui-datepicker-next {
+#btn-resources {
+    width: 33%;
+    padding-top: 12px;
+}
+
+#btn-resources-mobile {
+    padding-top: 12px;
+}
+
+#resources-container {
+    position: relative;
+    padding: 0 !important;
+}
+
+#hours-container {
+    padding: 0px;
+    margin-bottom: 230px;
+}
+
+@media (max-width: 425px){
+    #hours-container {
+        margin-bottom: 115px !important;
+    }
+}
+
+#resources-elements {
     position: absolute;
-    right: 122px;
-    cursor: pointer !important;
-	background-position: center 0px;
-	float: right;
-	bottom: -4px;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    padding: 0 0 !important;
 }
 
-.ui-datepicker-title {
-	text-align: center;
-	font-size: 1.2em;
-	font-weight: bold;
+.paragraphs {
+    padding: 0 0 !important;
 }
 
-.ui-datepicker-unselectable.ui-state-disabled {
-    color: #000;
-    background: url('/img/index/x.png') center center no-repeat;
+@media (min-width: 375px) {
+    #resources-elements p.body-text-mobile {
+        font-size: 21.5px !important;
+        margin-bottom: 15% !important;
+    }
+
+    #resources-elements p.body-header-mobile {
+        font-size: 29px !important;
+    }
 }
 
-.ui-datepicker-unselectable.ui-state-disabled.ui-datepicker-other-month {
-    background: none;
+
+#resources-elements p.body-header {
+    line-height: 1;
+    margin-top: 1.7em;
+    margin-bottom: .2em;
+    color: white;
+    max-width: 10em;
 }
 
-.ui-datepicker-inline .examJam {
-    background: #AB1219;
+#resources-elements p.body-header-mobile {
+    line-height: 1;
+    margin-top: 1.4em;
+    margin-bottom: .2em;
+    color: white;
+    font-size: 26px;
 }
 
-.ui-datepicker-inline .examJam a {
-    color: #FFFFFF;
-    font-weight: bold;
+#resources-elements p.body-text {
+    margin-bottom: 4%;
+    color: white;
+    max-width: 22em;
 }
 
-.ui-datepicker-month, .ui-datepicker-year {
-    font-weight: bold;
+#resources-elements p.body-text-mobile {
+    margin-top: 3.5%;
+    margin-bottom: 9%;
+    color: white;
+    max-width: 15em;
+    line-height: normal !important;
+    font-size: 19px;
 }
 
-.ui-datepicker-key {
-    border-radius: 0;
-    border-collapse: collapse;
-    width: 90%;
-	border-bottom: 0;
-	padding-bottom: 30px !important;
+#btn-showreel {
+    margin-top: 4em;
+    margin-bottom: 1.1em;
 }
 
-.ui-datepicker-key td {
-    padding: 5px;
+#btn-showreel-mobile {
+    margin-top: 4em;
+    margin-bottom: 1.1em;
 }
 
-.ui-datepicker-inline a {
-    cursor: text;
+.vod-span {
+    margin-top: .833em;
+    float: right;
+    padding-right: 17.5%;
+    color: #333333 !important;
+    font-weight: 900 !important;
 }
 
-a:link, a:visited {
-    text-decoration: none;
-    color: #000;
-}
-
-a:hover {
-    color: #9b9b9b;
-}
-
-/*Previously a#resource-button*/
-#btn-resource {
-	border: 2px solid #c72027;
-    border-radius: 25px;
-    font-weight: bold;
-    height: 20px;
-    padding: 10px;
-    text-align: center;
-    width: 200px;
-	/*margin: -40px auto 40px;*/
-	font-size: 0.8em;
-	display: inline-block;
-	position: relative;
-	top: -55px;
-}
-
-/*Previously a#resource-button:hover*/
-#btn-resource:hover {
-	background-color: #c72027;
-	color: #fff;
+.vod-span-mobile {
+    margin-top: .833em;
+    float: right;
+    color: #333333 !important;
+    font-size: 1em;
+    font-weight: 900 !important;
 }

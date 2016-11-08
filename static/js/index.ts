@@ -1,41 +1,58 @@
-import "jquery-ui";
+/// <reference path="./typings/index.d.ts"/>
+
+import "underscore";
+import "bootstrap-calendar";
 
 export module index {
-
-    function updateCalendar(start: Date, end: Date) {
-        $.post("/post/get-calendar", {
-            "start": start.toISOString(),
-            "end": end.toISOString()
-        }, function(days: any) {
-            $("#calendar").datepicker(<any>{
-                "hideIfNoPrevNext": true,
-                "minDate": start,
-                "endDate": end,
-                "dayNamesMin": ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
-                "beforeShowDay": function(date: Date): any[] {
-                    let dateString: string = $.datepicker.formatDate("yy-mm-dd", date);
-                    if (days[dateString]) {
-                        if (days[dateString].isExamJam) {
-                            return [true, "examJam", "Exam Jam"];
-                        } else { // closed
-                            return [false, "", "MAC is closed"];
-                        }
-                    } else {
-                        return [true, "", ""];
-                    }
-                }
-            })
-        }, "json").fail(function(err) {
-            console.log("Couldn't fetch calendar data: " + err.status);
-        });
+    function getOnVideoOpen(source: string): () => void {
+        return function() {
+            if ($("#iframe-video").attr("src") != source) {
+                $("#iframe-video").attr("src", source);
+            }
+        }
     }
-
     $(document).ready(function() {
-        let start: Date = new Date();
-        start.setDate(1);
-        let end: Date = new Date();
-        end.setMonth(end.getMonth() + 4);
-        end.setDate(1);
-        updateCalendar(start, end);
+        let calendar = (<any>$("#calendar")).calendar({
+            tmpl_path: "templates/calendar/",
+            events_source: "/post/get-hours",
+            display_week_number: false,
+            weekbox: false,
+            views: {
+                "month": {
+                    slide_events: 0,
+                    enable: 1
+                },
+                "year": {
+                    enable: 0
+                },
+                "week": {
+                    enable: 0
+                },
+                "day": {
+                    enable: 0
+                }
+            }
+        });
+        $(".cal-row-head .cal-cell1").each(function() { //truncates calendar elements down to 3 chars
+            $(this).text($(this).text().substring(0, 3));
+        });
+        $("#btn-stat").click(getOnVideoOpen("https://www.youtube.com/embed/HQykE8yDKIk"));
+        $("#btn-showreel").click(getOnVideoOpen("https://www.youtube.com/embed/x-LCi2Pg4Z4"));
+        $("#modal-video").on("hidden.bs.modal", function() {
+            $("#iframe-video").attr("src", "");
+        });
+        $(".navbar-collapse").on("show.bs.collapse", function() {
+            $("#navbar-container").addClass("navbar-background");
+            $("#navbar-button span").addClass("hidden");
+            $("#navbar-button i").removeClass("hidden");
+            $("#navbar-mobile-logo").addClass("white");
+        });
+        $(".navbar-collapse").on("hidden.bs.collapse", function() {
+            $("#navbar-container").removeClass("navbar-background");
+            $("#navbar-button span").removeClass("hidden");
+            $("#navbar-button i").addClass("hidden");
+            $("#navbar-mobile-logo").removeClass("white");
+        });
+        $("link[href='/css/global.old.css']").remove();
     });
 }

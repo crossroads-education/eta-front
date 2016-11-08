@@ -1,4 +1,4 @@
-extends ./include/layout.pug
+extends ./include/layout.old.pug
 
 block body
     div#container-header
@@ -10,10 +10,17 @@ block body
 
             <strong>to you</strong>
     ul.list-buttons
-        each room in rooms
-            li
-                span
-                    a(href=room.url, target="_blank") Room #{room.letter}
-                ul
-                    each course in room.courses
-                        li #{course}
+        if rooms.length == 0
+            - for (var i = 0; i < 4; i++)
+                li
+                    span
+                        a.closed(href="") Room Closed
+                    ul.closed
+        - else
+            each room in rooms
+                li
+                    span
+                        a(href=room.url, target="_blank") Room #{room.letter}
+                    ul
+                        each course in room.courses
+                            li #{course}

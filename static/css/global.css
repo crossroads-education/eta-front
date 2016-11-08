@@ -1,281 +1,407 @@
-/* Pre-redesign from https://raw.githubusercontent.com/MAC-IUPUI/node-site/master/public/css/global.css */
-
-@font-face {
-    font-family: "Avenir Next LT Pro";
-    font-weight: 900;
-    font-style: normal;
-    src: url('/fonts/AvenirNextLTPro-Bold.woff') format('woff'), url('/fonts/AvenirNextLTPro-Bold.ttf') format('truetype');
+div#body, div#body *:not(.fa){
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
 }
 
-@font-face {
-    font-family: "Avenir Next LT Pro";
-    font-weight: 700;
-    font-style: normal;
-    src: url('/fonts/AvenirNextLTPro-Demi.woff') format('woff'), url('/fonts/AvenirNextLTPro-Demi.ttf') format('truetype');
+#mobile-nav {
+    color:transparent !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    float: right;
+    position: static;
 }
 
-@font-face {
-    font-family: "Avenir Next LT Pro";
-    font-weight: 700;
-    font-style: italic;
-    src: url('/fonts/AvenirNextLTPro-DemiIt.woff') format('woff'), url('/fonts/AvenirNextLTPro-DemiIt.ttf') format('truetype');
+.navbar-toggle {
+    border-color: transparent !important;
 }
 
-@font-face {
-    font-family: "Avenir Next LT Pro";
-    font-weight: 400;
-    font-style: normal;
-    src: url('/fonts/AvenirNextLTPro-Regular.woff') format('woff'), url('/fonts/AvenirNextLTPro-Regular.ttf') format('truetype');
+.navbar-collapse {
+    border-color: transparent !important;
 }
 
-@font-face {
-    font-family: "Avenir Next LT Pro";
-    font-weight: 400;
-    font-style: italic;
-    src: url('/fonts/AvenirNextLTPro-It.woff') format('woff'), url('/fonts/AvenirNextLTPro-It.ttf') format('truetype');
+.navbar-element a {
+    color: white;
+    font-size: 24px;
+    font-weight: 800 !important;
 }
 
-body {
+.navbar-element-small a{
+    font-size: 20px;
+    font-weight: 600 !important;
+}
+
+.navbar-element-small a {
+    color: white;
+}
+
+.on-click {
+    float: none !important;
+    background-color: #333333;
+    z-index: -100;
+    width: 100%;
+}
+
+.icon-bar {
+    background-color: white !important;
+}
+
+#container-navbar-desktop {
+	width: 100%;
+	padding-bottom: 0px;
+}
+
+#container-navbar-desktop a {
+    font-weight: 800 !important;
+}
+
+#mobileNavBar {
+    width: 100%;
+}
+
+.container-navlinks-desktop {
+	list-style-type: none;
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	padding-left: 0;
+	margin: 0px;
+}
+
+#mobile-nav {
+    width: 100%;
     border: 0;
-    margin: 0px auto;
-    padding: 0px;
-    box-sizing: border-box;
-    max-width: 1200px;
-    min-width: 900px;
-    width: 100%;
-}
-
-#body {
-    margin-bottom: 0px !important;
-}
-
-body, pre {
-    font-family: 'Avenir Next LT Pro', sans-serif;
-}
-
-/*Previously #navBar*/
-#container-navbar {
-    width: 100%;
-    padding-bottom: 0px;
-    display: inline-block;
     position: relative;
+    z-index: 5;
 }
 
-/*Previously .navLinks*/
-.navbar-links {
-    list-style-type: none;
-    height: 100%;
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    padding-left: 0;
-    margin: 0px;
+#navbar-container {
+    padding: 0 0 0 0;
 }
 
-/*Previously .navLinks*/
-.navbar-links > li {
-    display: inline-block;
-    margin-left: 2%;
-    margin-right: 2%;
-    text-align: center;
-    height: 45px;
-    vertical-align: top;
-    margin-bottom: 0px;
-    padding-top: 30px;
-    padding-bottom: 5px;
+.fa-times {
+    padding: 0 0 0 0 !important;
+    color: white !important;
+    font-size: 1.8em;
 }
 
-/*Previously .navLinks*/
-.navbar-links > li > a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
+.navbar-background {
+    background-color: #333333;
 }
 
-.navbar-links-bottom {
-    width: 100px;
+#navbar-header {
+    margin: 10px 0 0 0;
 }
 
-.navbar-links-bottom-right {
-    width: 160px;
+#navbar-list li:nth-of-type(1), #navbar-list li:nth-of-type(5), #navbar-list li:nth-of-type(7){
+    margin-top: 35px;
+}
+
+.social-media-mobile .mac-facebook {
+    margin-left: 20px;
+}
+
+#navbar-list {
+    margin-bottom: 100%;
+}
+
+#navbar-button {
+    background-color: transparent !important;
+}
+
+.container-navlinks-desktop>li {
+	display: inline-block;
+	margin-left: 2%;
+	margin-right: 2%;
+	text-align: center;
+	height: 45px;
+	vertical-align: top;
+	margin-bottom: 0px;
+	padding-top: 30px;
+	padding-bottom: 5px;
+}
+
+.container-navlinks-desktop>li>a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
 }
 
 .slimmenu a, a:active {
     text-decoration: none;
 }
 
-/*Previously .MAC_Logo*/
-.logo-mac {
-    background-image: url('/img/logo.png');
-    padding: 26px 56px;
-    background-size: cover;
-    display: inline-block;
+.mac-logo {
+	background-image: url('/img/logo.png');
+	padding: 26px 56px;
+	background-size: cover;
+	display: inline-block;
 }
 
-/*Previously .MAC_Logo-white*/
-.logo-mac.white {
-    background-image: url('/img/logo_white.png');
-    margin: 20px 75px;
+.mac-logo.white {
+	background-image: url('/img/logo_white.png');
 }
 
-/*Previously .navLinks > #nav-image*/
-#navbar-logo {
-    padding: 13px 20px 0px;
-    margin-left: 5px;
-    margin-right: 0px;
+.container-navlinks-desktop>#nav-image {
+	padding: 13px 20px 0px;
+	margin-left: 5px;
+	margin-right: 0px;
 }
 
-.background-image {
-    background-size: cover;
+#body {
+    margin-left: 0px !important;
+    margin-bottom: 0px !important;
+    max-width: 100%;
 }
 
-img {
-    border: 0;
+#container-footer-desktop table {
     width: 100%;
 }
 
-/*Previously .left*/
-.text-left {
-    text-align: left;
+.column-container {
+    width: 33%;
 }
 
-/*Previously .right*/
-.text-right {
-    text-align: right;
+#container-footer-desktop {
+    padding-bottom: 0px;
+    background-color: #333333;
+    margin-top: 0px;
 }
 
-/*Previously .centered*/
-.text-center {
-    text-align: center;
+#container-footer-desktop td {
+    border: 1px solid #5E5757;
 }
 
-/*Previously #header*/
-#container-header {
-    position: relative;
-    border-width: 0px;
-    margin: 0px;
-    padding: 0px;
+.list-text {
+    color: white !important;
+    font-weight: 800 !important;
+
 }
 
-/*Previously #header-no-image*/
-#container-header.no-image {
-    /*position: relative;*/
-    width: 100%;
-    display: block;
-    padding: 88px 45px;
-    overflow: visible;
-    border-bottom: 2px solid #F0F0F0;
-    border-top: 2px solid #F0F0F0;
-    box-sizing: border-box;
+.footer-column1-list {
+    padding-left: 120px;
+    border-right: 0px;
+    padding-right: 0px;
 }
 
-/*Previously #headerText*/
-.header-text {
-    position: absolute;
-    top: 164px;
-    text-transform: lowercase;
-    font-style: italic;
-    font-size: 3em;
-    line-height: 40px;
-    margin: 0;
+#mobile-footer-table {
+    width: 75%;
+    margin: 0 auto;
 }
 
-/*Previously #headerText-no-image*/
-.header-text.no-image {
-    top: 25px;
-    text-transform: lowercase;
-    font-style: italic;
-    font-size: 3em;
-    line-height: 40px;
-    width: 100%;
-    margin: 0;
+#mobile-footer-table td{
+    width: 33.3333%;
 }
 
-/*Previously .header-left*/
-.header-text.text-left {
-    left: 45px;
+#mobile-footer-table li {
+    padding-bottom: .75em;
 }
 
-/*Previously .header-right*/
-.header-text.text-right {
-    right: 45px;
-}
-
-/*Previously .header-centered*/
-.header-text.text-center {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-/*Previously #headerText>strong, #headerText-no-image>strong*/
-.header-text > strong {
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 1.4em;
-    font-style: normal;
-}
-
-/*Previously #mac-footer table*/
-#container-footer table {
-    border-collapse: collapse;
-    background-color: #282828;
-    color: #ffffff;
-}
-
-/*Previously #mac-footer td*/
-#container-footer td {
-    vertical-align: top;
-    border: 1px solid #3C3C3C;
-    text-align: center;
-}
-
-/*Previously #mac-footer a*/
-#container-footer a {
-    text-decoration: none;
-    color: #ffffff;
-    outline: none;
-}
-
-/*Previously #mac-footer td > ul*/
-#container-footer td > ul {
-    padding: 0 20px;
-    text-align: left;
-    list-style: none;
-    font-weight: bold;
-    line-height: 50px;
-}
-
-/*Previously #mac-footer td > pre*/
-#container-footer td > pre {
-    text-align: center;
-    margin: 40px 10px;
+#mobile-footer-table ul{
     padding: 0;
-    color: #ffffff;
 }
 
-/*Previously #mac-footer td > a > img*/
-#container-footer td > a > img {
-    width: 49px;
-    height: 49px;
-    padding: 20px;
+.footer-column1 li {
+    text-align: left;
 }
 
-hr {
-    border-width: 2px;
-    border-style: solid;
+.mac-twitter {
+    max-width: 35px;
+    max-height: 35px;
 }
 
-/*Previously button.iu-button*/
-button.btn-iu {
-    display: block;
-    clear: both;
-    position: relative;
-    width: 180px;
-    height: 60px;
-    border: 2px solid #b30f1a;
-    border-radius: 25px;
-    color: #000000;
-    font-size: 1.1em;
-    font-weight: bold;
-    background-color: #FFFFFF;
+.row-image {
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-top: 0px !important;
+}
+
+.footer-column1 {
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-bottom: 0px !important;
+    vertical-align: top;
+}
+
+.footer-column3-mobile {
+    vertical-align: top;
+}
+
+@media (max-width: 320px){
+    .footer-telephone {
+        margin-right: 2% !important;
+    }
+}
+
+@media (max-width: 425px){
+    .footer-column1 ul {
+        padding-left: 0px;
+    }
+
+    #footer-v1 {
+        padding-top: 0px !important;
+    }
+}
+
+#stat-address-mobile {
+    margin-bottom: 0px;
+    padding-bottom: 30px;
+}
+
+.footer-column2 {
+    border-left: 0px !important;
+    border-bottom: 0px !important;
+    vertical-align: top;
+}
+
+.footer-column2-list {
+    border-left: 0px;
+    padding-left: 0px;
+    padding-right: 15%
+}
+
+.footer-column2-list li a:hover, .footer-column1-list li a:hover, .footer-column3 ul li a:hover, .footer-column4 a:hover{
+    text-decoration: none !important;
+    color: #B8BBBC !important;
+}
+
+.footer-column2 li {
+    text-align: left;
+}
+
+#container-footer-desktop li {
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+.mac-facebook {
+    max-width: 35px;
+    max-height: 35px;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+#btn-employee {
+    background-color: #2B2B2B;
+    color: white !important;
+    width: 235px;
+    padding-bottom: 10px;
+    padding-top: 12px !important;
+    font-size: 1.2em;
+    height: 52px !important;
+}
+
+#btn-employee-mobile {
+    margin: auto 0;
+    padding-top: 12px;
+    background-color: #4D4D4D;
+    width: 75%;
+    margin-bottom: 25px;
+}
+
+.footer-column-container {
+    width: 33%;
+}
+
+#address-container {
+    padding-left: 5% !important;
+}
+
+.address {
+    font-size: 20pt;
+    text-align: left;
+    line-height: 20pt;
+    font-weight: 200 !important;
+}
+
+.address-mobile {
+    font-size: 12pt;
+    text-align: left;
+    font-weight: 200 !important;
+    margin-left: 12.5%;
+    max-width: 9em;
+}
+
+.address-mobile::first-line{
+    font-weight: 600 !important;
+}
+
+#footer-telephone {
+    font-size: 20pt !important;
+    font-weight: lighter !important;
+    color: white !important;
+}
+
+.footer-telephone {
+    font-size: 12pt;
+    color: white;
+    float:right;
+    font-weight: 200 !important;
+    margin-right: 15%;
+    margin-top: 5%;
+}
+
+
+
+#footer-logo {
+    background-size: cover;
+    background-image: url("../img/logo_white.png");
+    margin: 42px 0px 38px 51px;
+    width: 156px;
+    height: 72px;
+    text-align: left;
+}
+
+#footer-logo-mobile {
+    background-size: 100% 100%;
+    background-image: url("../img/logo_white.png");
+    width: 100px;
+    height: 46px;
+    text-align: left;
+    margin: 0 0 0 5%;
+}
+
+#container-footer-mobile {
+    background-color: #333333;
+    padding-top: 20px;
+}
+
+.mobile-break {
+    border-top: 1px solid #4D4D4D !important;
+    margin-bottom: 25px;
+    padding: 0 0 0 0;
+}
+
+
+.footer-column3 {
+    padding-top: 25px;
+    padding-bottom: 20px;
+    width: 25%;
+    border-bottom: 0px !important;
+}
+
+.footer-column3 ul {
+    padding-left: 0 !important;
+}
+
+.footer-column3 li a {
+    font-weight: 300 !important;
+}
+
+.footer-column4 {
+    border-bottom: 0px !important;
+}
+
+.socialMedia {
+    padding-top: 5%;
+    float: left;
+}
+
+.social-media-mobile {
+    float: right;
+    margin: 3% 15% 0 0;
+}
+
+#mobile-links-container {
+    margin: 0 0 5% 0;
 }
