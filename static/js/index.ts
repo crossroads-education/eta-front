@@ -2,8 +2,19 @@
 
 import "underscore";
 import "bootstrap-calendar";
-
 export module index {
+    let calendar : any;
+    function onCalendarNavigate() {
+        $(this).data("calendar-nav")
+        calendar.navigate($(this).data("calendar-nav"));
+        truncateDays();
+    }
+
+    function truncateDays() {
+        $(".cal-row-head .cal-cell1").each(function() { //truncates calendar elements down to 3 chars
+            $(this).text($(this).text().substring(0, 3));
+        });
+    }
     function getOnVideoOpen(source: string): () => void {
         return function() {
             if ($("#iframe-video").attr("src") != source) {
@@ -11,8 +22,12 @@ export module index {
             }
         }
     }
+    function getMonthName(index : number) : string {
+        let monthNames : string[] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        return monthNames[index];
+    }
     $(document).ready(function() {
-        let calendar = (<any>$("#calendar")).calendar({
+        calendar = (<any>$("#calendar")).calendar({
             tmpl_path: "templates/calendar/",
             events_source: "/post/get-hours",
             display_week_number: false,
@@ -33,6 +48,8 @@ export module index {
                 }
             }
         });
+        let date : Date = new Date;
+        $("#span-month").text(getMonthName(date.getMonth()));
         $(".cal-row-head .cal-cell1").each(function() { //truncates calendar elements down to 3 chars
             $(this).text($(this).text().substring(0, 3));
         });
@@ -54,5 +71,6 @@ export module index {
             $("#navbar-mobile-logo").removeClass("white");
         });
         $("link[href='/css/global.old.css']").remove();
+        $("button[data-calendar-nav]").on("click", onCalendarNavigate);
     });
 }

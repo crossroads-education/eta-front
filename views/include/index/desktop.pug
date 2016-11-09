@@ -42,9 +42,13 @@ div.col-xs-12.row#hours-container
                         -else
                             td.form-label.hours Closed
     div.col-xs-4.col-xs-offset-1#calendar-container
+        div.btn-group.text-center
+            button.btn.btn-primary(data-calendar-nav="prev")
+            span#span-month
+            button.btn.btn-primary(data-calendar-nav="next")
         div#calendar
 div.col-xs-12#resources-container
-    div.col-xs-11.col-xs-offset-1#resources-elements
+    div.col-xs-offset-1#resources-elements
         p.body-header We have just what you needed.
         p.body-text We made several class resources just for you. These resources include instructive shorts, class hand-outs, formula sheets, study guides, practice examinations and answer keys. They're designed to prepare you for mid-terms and final exams.
         a.btn.btn-primary.btn-er.col-xs-4#btn-resources(href = "http://math.iupui.edu/undergraduate/courses") Check 'em out

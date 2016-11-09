@@ -1,3 +1,4 @@
+
 div#body, div#body *:not(.fa){
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
@@ -341,8 +342,6 @@ div#body, div#body *:not(.fa){
     margin-top: 5%;
 }
 
-
-
 #footer-logo {
     background-size: cover;
     background-image: url("../img/logo_white.png");
@@ -372,7 +371,6 @@ div#body, div#body *:not(.fa){
     padding: 0 0 0 0;
 }
 
-
 .footer-column3 {
     padding-top: 25px;
     padding-bottom: 20px;
@@ -390,6 +388,7 @@ div#body, div#body *:not(.fa){
 
 .footer-column4 {
     border-bottom: 0px !important;
+    border-right-width: 1px !important;
 }
 
 .socialMedia {
