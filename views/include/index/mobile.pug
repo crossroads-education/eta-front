@@ -1,9 +1,9 @@
 +mobileNavBar()
     div.text-center.col-xs-12.button-container-mobile#button-container
-        a.btn.btn-primary.btn-er-mobile#btn-online-mobile(href=baseurl + "nexus") Get live help online
-img.full-image(src="../img/mHomepage.png")
+        a.btn.btn-primary.btn-er-mobile#btn-online-mobile(href=baseurl + "online") Get live help online
+img.full-image(src=baseurl + "img/mHomepage.png")
 div.block.col-xs-12#description-container-mobile
-    img(src = "../img/body-image.png").col-xs-7.col-xs-offset-5#mobile-body-image
+    img(src=baseurl + "img/body-image.png").col-xs-7.col-xs-offset-5#mobile-body-image
     div.paragraphs.col-xs-offset-1.col-xs-10
         p.body-header Your peers are here to help.
         div(data-paragraph="1").data-paragraph-mobile
@@ -13,7 +13,7 @@ div.block.col-xs-12#description-container-mobile
         div(data-paragraph="3").data-paragraph-mobile
             p.body-text-mobile The MAC STAT is located in the library (UL 2135D) and caters specifically to statistics courses. It's the MAC as you know it, just for statistics.
         div.col-xs-12
-            a.btn.btn-primary.button-vod-mobile.text-center#btn-showreel-mobile(href= "https://www.youtube.com/embed/x-LCi2Pg4Z4")
+            a.btn.btn-primary.button-vod-mobile.text-center#btn-showreel-mobile(href="https://www.youtube.com/embed/x-LCi2Pg4Z4")
                 span.vod-span-mobile.text-center#btn-showreel-span-mobile Watch our show reel
                 i.fa.fa-play-circle-o(aria-hidden="true")
         div.col-xs-12
@@ -48,6 +48,6 @@ div.col-xs-12#resources-container
     div.col-xs-9#resources-elements
         p.body-header-mobile We have just what you needed.
         p.body-text-mobile We made several class resources just for you. These resources include instructive shorts, class hand-outs, formula sheets, study guides, practice examinations and answer keys. They're designed to prepare you for mid-terms and final exams.
-        a.btn.btn-primary.btn-er-mobile.col-xs-10.col-xs-offset-1#btn-resources-mobile(href = "http://math.iupui.edu/undergraduate/courses") Check 'em out
-    img.full-image(src = "../img/m_ladywriting-02.png")
+        a.btn.btn-primary.btn-er-mobile.col-xs-10.col-xs-offset-1#btn-resources-mobile(href=baseurl + "/resources") Check 'em out
+    img.full-image(src=baseurl + "img/m_ladywriting-02.png")
     +mobileFooter()

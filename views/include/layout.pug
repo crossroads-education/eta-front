@@ -39,9 +39,9 @@ mixin mobileFooter
         div#mobile-links-container
             div.social-media-mobile
                 a(href="https://twitter.com/MACatIUPUI", target="_blank")
-                    img.mac-twitter(src="../img/twitter.png")
+                    img.mac-twitter(src=baseurl + "img/twitter.png")
                 a(href="https://www.facebook.com/MACatIUPUI", target="_blank")
-                    img.mac-facebook(src="../img/facebook.png")
+                    img.mac-facebook(src=baseurl + "img/facebook.png")
             a(href=baseurl)
                 div#footer-logo-mobile
         hr.mobile-break.col-xs-12
@@ -129,9 +129,9 @@ mixin desktopFooter
                     a.btn.btn-primary.btn-er#btn-employee(href=baseurl + "office") Employee portal
                     ul
                         li
-                            a.list-text(href="https://mac.iupui.edu/TutorTrac/macTracStudent.php") Track your visits
+                            a.list-text(href=baseurl + "track/index") Track your visits
                         li
-                            a.list-text(href) MAC Flyer 2016
+                            a.list-text(href=baseurl + "files/MACFlyer2016.pdf") MAC Flyer 2016
                 td.footer-column4(rowspan="2")#address-container
                     p.list-text.address
                         |815 West Michigan Street
@@ -145,6 +145,6 @@ mixin desktopFooter
                         a.telephone-ref(href="tel:317-274-7898")#footer-telephone  317-274-7898
                     div.socialMedia
                         a(href="https://twitter.com/MACatIUPUI", target="_blank")
-                            img.mac-twitter(src="../img/twitter.png")
+                            img.mac-twitter(src=baseurl + "img/twitter.png")
                         a(href="https://www.facebook.com/MACatIUPUI", target="_blank")
-                            img.mac-facebook(src="../img/facebook.png")
+                            img.mac-facebook(src=baseurl + "img/facebook.png")

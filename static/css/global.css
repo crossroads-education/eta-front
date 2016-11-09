@@ -344,7 +344,7 @@ div#body, div#body *:not(.fa){
 
 #footer-logo {
     background-size: cover;
-    background-image: url("../img/logo_white.png");
+    background-image: url("/img/logo_white.png");
     margin: 42px 0px 38px 51px;
     width: 156px;
     height: 72px;
@@ -353,7 +353,7 @@ div#body, div#body *:not(.fa){
 
 #footer-logo-mobile {
     background-size: 100% 100%;
-    background-image: url("../img/logo_white.png");
+    background-image: url("/img/logo_white.png");
     width: 100px;
     height: 46px;
     text-align: left;
