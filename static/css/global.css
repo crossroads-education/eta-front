@@ -388,7 +388,7 @@ div#body, div#body *:not(.fa){
 
 .footer-column4 {
     border-bottom: 0px !important;
-    border-right-width: 1px !important;
+    border-right-width: 0px !important;
 }
 
 .socialMedia {

@@ -3,10 +3,24 @@
 import "underscore";
 import "bootstrap-calendar";
 export module index {
-    let calendar : any;
+
+    let calendarMonthDate: Date = new Date();
+    let monthNames: string[] = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"];
+    let calendar: any;
+
+    function updateCalendarMonth(shift: number) {
+        calendarMonthDate.setMonth(calendarMonthDate.getMonth() + shift);
+        $("#span-month").text(monthNames[calendarMonthDate.getMonth()]);
+    }
+
     function onCalendarNavigate() {
-        $(this).data("calendar-nav")
-        calendar.navigate($(this).data("calendar-nav"));
+        let navDirection: string = $(this).data("calendar-nav");
+        calendar.navigate(navDirection);
+        updateCalendarMonth((navDirection == "next") ? 1 : -1);
         truncateDays();
     }
 
@@ -15,6 +29,7 @@ export module index {
             $(this).text($(this).text().substring(0, 3));
         });
     }
+
     function getOnVideoOpen(source: string): () => void {
         return function() {
             if ($("#iframe-video").attr("src") != source) {
@@ -22,10 +37,7 @@ export module index {
             }
         }
     }
-    function getMonthName(index : number) : string {
-        let monthNames : string[] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        return monthNames[index];
-    }
+
     $(document).ready(function() {
         calendar = (<any>$("#calendar")).calendar({
             tmpl_path: "templates/calendar/",
@@ -48,8 +60,7 @@ export module index {
                 }
             }
         });
-        let date : Date = new Date;
-        $("#span-month").text(getMonthName(date.getMonth()));
+        updateCalendarMonth(0);
         $(".cal-row-head .cal-cell1").each(function() { //truncates calendar elements down to 3 chars
             $(this).text($(this).text().substring(0, 3));
         });
