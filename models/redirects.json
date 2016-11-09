@@ -1,0 +1,9 @@
+{
+  "/apply.php": "apply",
+  "/contact.php": "contact",
+  "/index.php": "index",
+  "/liveHelp.php": "online",
+  "/press.php": "press",
+  "/resources.php": "resources",
+  "/team.php": "team"
+}
