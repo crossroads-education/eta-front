@@ -8,7 +8,7 @@ export class Model implements eta.Model {
             SELECT
                 OnlineRoom.letter,
                 OnlineRoom.url,
-                GROUP_CONCAT(CONCAT(Course.subject, ' ', Course.number) ORDER BY Course.subject, Course.number SEPARATOR '\\n') AS rawCourses
+                GROUP_CONCAT(DISTINCT CONCAT(Course.subject, ' ', Course.number) ORDER BY Course.subject, Course.number SEPARATOR '\\n') AS rawCourses
             FROM
                 OnlineRoom
                     LEFT JOIN Course ON
