@@ -1,1 +1,32 @@
 extends ./include/layout.old.pug
+
+block body
+    div.no-image#container-header
+        pre.header-text.text-center.no-image(style="position: static;").
+            <strong>mac produced</strong>
+
+            at <strong>your disposal</strong>
+    div.container-groups
+        each group in groups
+            h1 #{group.name}
+            div.container-courses
+                ul
+                    each course in group.courses
+                        li
+                            a(href="#" + course.codeName)
+                                strong #{course.name}:
+                                |  #{course.description}
+                each course in group.courses
+                    div.container-course(id=course.codeName)
+                        a.link-packet(target="_blank", href="/files/resources/" + course.codeName + "_Packet.pdf")
+                            img.icon-packet(src="/img/resources/help.png")
+                            h3 Download the Exam Jam Booklet
+                        div.container-others
+                            h3 Other Resources
+                            ul
+                                li
+                                    a(target="_blank", href="/files/resources/" + course.codeName + "_Solutions.pdf") Solutions
+                                li
+                                    a(target="_blank", href="/files/resources/" + course.codeName + "_Syllabus.pdf") Syllabus
+                                li
+                                    a(target="_blank", href="/files/resources/" + course.codeName + "_Concise.pdf") Concise

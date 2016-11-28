@@ -1,4 +1,5 @@
 /node_modules/
+/static/files/
 /static/js/typings/
 /typings/
 *.js
