@@ -229,7 +229,7 @@ div#body, div#body *:not(.fa){
 }
 
 @media (max-width: 320px){
-    .footer-telephone {
+    .footer-telephone-mobile {
         margin-right: 2% !important;
     }
 }
@@ -304,7 +304,7 @@ div#body, div#body *:not(.fa){
     width: 33%;
 }
 
-#address-container {
+.container-address {
     padding-left: 5% !important;
 }
 
@@ -327,13 +327,13 @@ div#body, div#body *:not(.fa){
     font-weight: 600 !important;
 }
 
-#footer-telephone {
+.footer-telephone-desktop {
     font-size: 20pt !important;
     font-weight: lighter !important;
     color: white !important;
 }
 
-.footer-telephone {
+.footer-telephone-mobile {
     font-size: 12pt;
     color: white;
     float:right;
@@ -391,9 +391,23 @@ div#body, div#body *:not(.fa){
     border-right-width: 0px !important;
 }
 
+.container-socialMedia {
+    border: 0 !important;
+}
+
 .socialMedia {
-    padding-top: 5%;
-    float: left;
+    padding-right: 5%;
+    float: right;
+}
+
+.wrapper-facebook {
+    float: right;
+    margin-right: 6%;
+}
+
+.wrapper-twitter {
+    float: right;
+    margin-right: 2%;
 }
 
 .social-media-mobile {

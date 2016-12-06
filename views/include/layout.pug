@@ -39,9 +39,9 @@ mixin mobileFooter
         div#mobile-links-container
             div.social-media-mobile
                 a(href="https://twitter.com/MACatIUPUI", target="_blank")
-                    img.mac-twitter(src=baseurl + "img/twitter.png")
+                    img.mac-twitter(src=baseurl + "img/logos/twitter.png")
                 a(href="https://www.facebook.com/MACatIUPUI", target="_blank")
-                    img.mac-facebook(src=baseurl + "img/facebook.png")
+                    img.mac-facebook(src=baseurl + "img/logos/facebook.png")
             a(href=baseurl)
                 div#footer-logo-mobile
         hr.mobile-break.col-xs-12
@@ -72,11 +72,11 @@ mixin mobileFooter
                         li
                             a.list-text(href=baseurl + "files/MACFlyer2016.pdf") Flyer 2016
         hr.mobile-break.col-xs-12
-        a.telephone-ref.footer-telephone(href="tel:317-274-7898") P: (317) 274-7898
+        a.telephone-ref.footer-telephone-mobile(href="tel:317-274-7898") P: (317) 274-7898
         p.list-text.address-mobile MAC:
             br
             |815 W. Michigan St. Room B01 Indianapolis, IN 46202
-        a.telephone-ref.footer-telephone(href="tel:317-274-7898") P: (317) 274-7235
+        a.telephone-ref.footer-telephone-mobile(href="tel:317-274-7898") P: (317) 274-7235
         p.list-text.address-mobile#stat-address-mobile MAC Stat:
             br
             |755 West Michigan Street Room 2135D Indianapolis, IN 46202
@@ -108,6 +108,11 @@ mixin desktopFooter
                 td.row-image(colspan="3")
                     a(href=baseurl)
                         div#footer-logo
+                td.container-socialMedia(colspan="2")
+                    a.wrapper-facebook(href="https://www.facebook.com/MACatIUPUI", target="_blank")
+                        img.mac-facebook(src=baseurl + "img/logos/facebook.png")
+                    a.wrapper-twitter(href="https://twitter.com/MACatIUPUI", target="_blank")
+                        img.mac-twitter(src=baseurl + "img/logos/twitter.png")
             tr
                 td.footer-column1
                     ul.footer-column1-list
@@ -132,19 +137,29 @@ mixin desktopFooter
                             a.list-text(href=baseurl + "track/index") Track your visits
                         li
                             a.list-text(href=baseurl + "files/MACFlyer2016.pdf") MAC Flyer 2016
-                td.footer-column4(rowspan="2")#address-container
+                td.footer-column4.container-address
                     p.list-text.address
-                        |815 West Michigan Street
+                        | MAC:
                         br
-                        |Room B01
+                        | 815 West Michigan Street
                         br
-                        |Indianapolis, IN 46202
+                        | Room B01
+                        br
+                        | Indianapolis, IN 46202
                         br
                         br
-                        |p:
-                        a.telephone-ref(href="tel:317-274-7898")#footer-telephone  317-274-7898
-                    div.socialMedia
-                        a(href="https://twitter.com/MACatIUPUI", target="_blank")
-                            img.mac-twitter(src=baseurl + "img/twitter.png")
-                        a(href="https://www.facebook.com/MACatIUPUI", target="_blank")
-                            img.mac-facebook(src=baseurl + "img/facebook.png")
+                        | p:
+                        a.telephone-ref.footer-telephone-desktop(href="tel:317-274-7898")  317-274-7898
+                td.footer-column4.container-address
+                    p.list-text.address
+                        | MAC Stat:
+                        br
+                        | 755 West Michigan Street
+                        br
+                        | Room B01
+                        br
+                        | Indianapolis, IN 46202
+                        br
+                        br
+                        | p:
+                        a.telephone-ref.footer-telephone-desktop(href="tel:317-274-7235")  317-274-7235
