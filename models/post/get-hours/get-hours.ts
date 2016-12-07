@@ -45,7 +45,7 @@ export class Model implements eta.Model {
                     examJamRows[i].id = n;
                     examJamRows[i].url = "";
                     examJamRows[i].class = "event-info";
-                    examJamRows[i].title = "Exam Jam @ " + eta.time.getMinuteTime(new Date(examJamRows[i].start));
+                    examJamRows[i].title = "Exam Jam @ " + eta.time.getMinuteTime(new Date(examJamRows[i].start)).toString();
                     closedRows.push(examJamRows[i]);
                 }
                 callback({
