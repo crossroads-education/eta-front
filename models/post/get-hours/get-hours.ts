@@ -28,10 +28,13 @@ export class Model implements eta.Model {
             }
             sql = `
             SELECT
-                UNIX_TIMESTAMP(start) * 1000 AS start,
-                UNIX_TIMESTAMP(end) * 1000 AS end
+                UNIX_TIMESTAMP(DateExamJam.start) * 1000 AS start,
+                UNIX_TIMESTAMP(DateExamJam.end) * 1000 AS end,
+                Course.subject AS subject,
+                Course.number AS number
             FROM
                 DateExamJam
+                LEFT JOIN Course ON DateExamJam.course = Course.id
             WHERE
                 UNIX_TIMESTAMP(start) >= ? / 1000 AND
                 UNIX_TIMESTAMP(end) < ? / 1000`;
@@ -45,7 +48,7 @@ export class Model implements eta.Model {
                     examJamRows[i].id = n;
                     examJamRows[i].url = "";
                     examJamRows[i].class = "event-info";
-                    examJamRows[i].title = "Exam Jam @ " + eta.time.getMinuteTime(new Date(examJamRows[i].start));
+                    examJamRows[i].title = examJamRows[i].subject + " " + examJamRows[i].number + " Exam Jam @ " + eta.time.getMinuteTime(new Date(examJamRows[i].start)).toString();
                     closedRows.push(examJamRows[i]);
                 }
                 callback({
