@@ -5,6 +5,7 @@ import "bootstrap-calendar";
 export module index {
 
     let calendarMonthDate: Date = new Date();
+    calendarMonthDate.setDate(1); // avoid february skipping later in month
     let monthNames: string[] = [
         "January", "February", "March",
         "April", "May", "June", "July",
@@ -39,6 +40,7 @@ export module index {
     }
 
     $(document).ready(function() {
+        $("link[href='/css/global.old.css']").remove();
         calendar = (<any>$("#calendar")).calendar({
             tmpl_path: "templates/calendar/",
             events_source: "/post/get-hours",
@@ -81,7 +83,6 @@ export module index {
             $("#navbar-button i").addClass("hidden");
             $("#navbar-mobile-logo").removeClass("white");
         });
-        $("link[href='/css/global.old.css']").remove();
         $("button[data-calendar-nav]").on("click", onCalendarNavigate);
     });
 }
