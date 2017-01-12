@@ -20,8 +20,7 @@ export class Model implements eta.Model {
         eta.db.query(sql, [req.body.start, req.body.end], (err: eta.DBError, examJamDays: any[]) => {
             if (err) {
                 eta.logger.dbError(err);
-                callback({ errcode: eta.http.InternalError });
-                return;
+                return callback({ errcode: eta.http.InternalError });
             }
             sql = `
                 SELECT
