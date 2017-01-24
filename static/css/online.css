@@ -2,8 +2,9 @@
 	overflow: hidden;
 }
 
-.container-body {
+.list-buttons {
 	padding: 20px;
+    padding-bottom: 150px;
 	text-align: center;
 	position: relative;
 	top: -150px;
@@ -12,15 +13,30 @@
 	background: white;
 }
 
-.btn-nexus {
+.list-buttons ul {
+	margin: 0;
+	padding: 10px 0;
+	background: rgba(255, 255, 255, 0.4);
+	border-radius: 25px;
+}
+
+.list-buttons li {
+	list-style: none;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	text-align: center;
+}
+
+.list-buttons a {
 	display: inline-block;
 	text-align: center;
 	text-decoration: none;
-	color: #000000;
+	color: #000;
 	font-weight: bold;
 	font-size: 1.1em;
 	border-radius: 25px;
-	background: #FFFFFF;
+	background: #FFF;
 	padding: 5px 0;
 	width: 240px;
 	box-sizing: border-box;
@@ -28,7 +44,28 @@
 	border: 2px solid #C72027;
 }
 
-.btn-nexus:hover {
+.list-buttons a:hover {
 	background-color: #C72027;
 	color: #FFF;
+}
+
+.list-buttons ul li {
+	display: block;
+	font-weight: bold;
+}
+
+.list-buttons a.closed {
+	border-color: #cecece;
+	color: #cecece;
+}
+
+.list-buttons a.closed:hover {
+	border-color: #cecece;
+	color: #cecece;
+	cursor: default;
+	background: #FFF;
+}
+
+.list-buttons ul.closed {
+	color: #cecece;
 }
