@@ -42,12 +42,14 @@ div.col-xs-12.row#hours-container
                         -else
                             td.form-label.hours Closed
     div.col-xs-4.col-xs-offset-1#calendar-container
-        div.btn-group.row.col-xs-12
-            button.btn.btn-primary(data-calendar-nav="prev")
-                i.fa.fa-chevron-left
+        div.btn-group.row.col-xs-8
+            div.col-xs-4
+                button.btn.btn-primary(data-calendar-nav="prev")
+                    i.fa.fa-chevron-left
             div.col-xs-4.text-center#span-month
-            button.btn.btn-primary(data-calendar-nav="next")
-                i.fa.fa-chevron-right
+            div.col-xs-4
+                button.btn.btn-primary(data-calendar-nav="next")
+                    i.fa.fa-chevron-right
         div#calendar
 div.col-xs-12#resources-container
     div.col-xs-offset-1#resources-elements

@@ -11,6 +11,10 @@
     padding-left: 5px !important;
 }
 
+.btn-group .col-xs-4 {
+    padding: 0px;
+}
+
 #hours-container p {
     margin-bottom: 100px;
 }
@@ -435,6 +439,9 @@ img {
     }
 }
 
+.btn-primary[data-calendar-nav="prev"] {
+    float: right;
+}
 
 #resources-elements p.body-header {
     line-height: 1;
@@ -493,15 +500,10 @@ img {
     font-weight: 900 !important;
 }
 
-#calendar-container .btn-group {
-    padding-left: 20% !important;
-}
-
 #calendar-container .btn {
     color: gray;
     background-color: white;
     border-color: white;
-    /*padding: 0 12px;*/
     font-size: 1.25em;
 }
 
@@ -509,7 +511,6 @@ img {
     margin-left: 2px;
     margin-right: -2px;
     font-size: 1.75em;
-    width: 25%;
     padding: 0 !important;
 }
 
