@@ -1,6 +1,6 @@
 +mobileNavBar()
     div.text-center.col-xs-12.button-container-mobile#button-container
-        a.btn.btn-primary.btn-er-mobile#btn-online-mobile(href=baseurl + "online") Get live help online
+        a.btn.btn-primary.btn-er-mobile#btn-online-mobile(href=baseurl + (useWizIQ ? "online" : "nexus")) Get live help online
 img.full-image(src=baseurl + "img/index/mobile/header.png")
 div.block.col-xs-12#description-container-mobile
     img(src=baseurl + "img/index/peers.png").col-xs-7.col-xs-offset-5#mobile-body-image

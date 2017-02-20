@@ -10,7 +10,7 @@ block navbar
                 a(href=baseurl)
                     div.logo-mac
             li
-                a(href=baseurl + "online") Live Help
+                a(href=baseurl + (useWizIQ ? "online" : "nexus")) Live Help
             li
                 a(href=baseurl + "resources") Resources
             li
@@ -39,7 +39,7 @@ block body
                 td(style="border-right: none; padding-left: 60px;")
                     ul.navbar-links-bottom
                         li
-                            a(href=baseurl + "online") Live Help
+                            a(href=baseurl + (useWizIQ ? "online" : "nexus")) Live Help
                         li
                             a(href=baseurl + "resources") Resources
                         li

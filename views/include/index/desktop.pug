@@ -1,6 +1,6 @@
 +desktopNavBar()
     div.text-center.button-container
-        a.btn.btn-primary.btn-er#btn-online(href=baseurl + "online") Get live help online
+        a.btn.btn-primary.btn-er#btn-online(href=baseurl + (useWizIQ ? "online" : "nexus")) Get live help online
 img.full-image(src=baseurl + "img/index/header.png")
 div.block.col-xs-12#description-container
     div.col-xs-5.col-xs-offset-1#paragraph-container

@@ -19,7 +19,7 @@ mixin mobileNavBar
                 div.collapse.navbar-collapse#collapse-elements
                     ul.nav.navbar#navbar-list
                         li.navbar-element.text-center
-                            a(href=baseurl + "online") Live Help
+                            a(href=baseurl + (useWizIQ ? "online" : "nexus")) Live Help
                         li.navbar-element.text-center
                             a(href=baseurl + "resources") Resources
                         li.navbar-element.text-center
@@ -52,7 +52,7 @@ mixin mobileFooter
                 td.footer-column1
                     ul
                         li
-                            a.list-text(href=baseurl + "online") Live Help
+                            a.list-text(href=baseurl + (useWizIQ ? "online" : "nexus")) Live Help
                         li
                             a.list-text(href=baseurl + "resources") Resources
                         li
@@ -90,7 +90,7 @@ mixin desktopNavBar
                 a(href=baseurl)
                     div.mac-logo
             li
-                a(href=baseurl + "online") Live Help
+                a(href=baseurl + (useWizIQ ? "online" : "nexus")) Live Help
             li
                 a(href=baseurl + "resources") Resources
             li
@@ -117,7 +117,7 @@ mixin desktopFooter
                 td.footer-column1
                     ul.footer-column1-list
                         li
-                            a.list-text(href=baseurl + "online") Live Help
+                            a.list-text(href=baseurl + (useWizIQ ? "online" : "nexus")) Live Help
                         li
                             a.list-text(href=baseurl + "resources") Resources
                         li
