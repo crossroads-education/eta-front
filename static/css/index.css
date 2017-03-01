@@ -11,6 +11,15 @@
     padding-left: 5px !important;
 }
 
+::selection{
+    color: black;
+    background: #FEE5B4;
+}
+
+img::selection{
+    background: transparent;
+}
+
 .btn-group .col-xs-4 {
     padding: 0px;
 }
