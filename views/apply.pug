@@ -5,6 +5,11 @@ block body
         pre.header-text.text-center.no-image
             strong Come work with us
     div.box.container-all
+        if (new Date()).getTime() < (new Date("2017-04-01")).getTime()
+            br
+            p.text-center(style="font-size: 16pt;")
+                strong Applications are open until April 1st, 2017.
+            br
         form(action="/post/apply", method="POST")
             div.container-levels
                 if error
