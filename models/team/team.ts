@@ -23,6 +23,7 @@ export class Model implements eta.Model {
                         Position.center = Center.id
             WHERE
                 Employee.current = 1 AND
+                EmployeePosition.start <= CURDATE() AND
                 (
                     EmployeePosition.end >= CURDATE() OR
                     EmployeePosition.end IS NULL
