@@ -3,7 +3,8 @@
   "courses": [{
     "name": "MATH-M 118",
     "codeName": "MATH-M-118",
-    "description": "Finite Mathematics"
+    "description": "Finite Mathematics",
+    "useConciseSolutions": true
   }, {
     "name": "MATH 11000",
     "codeName": "MATH-11000",
