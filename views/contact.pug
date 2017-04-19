@@ -1,12 +1,8 @@
-extends ./include/layout.pug
+extends ./include/layout.old.pug
 
 block body
-    +desktopNavBar()
     div.no-image#container-header
         img(src="/img/contact/header-bubble.png", alt="SAY HELLO")
-        //- //- a(href="tel:+13172747898")
-        //- pre.header-text.no-image.text-center(style="position: static;")
-        //-     strong SAY
     div.container-box
         div.col-xs-8#form-container
             form(method="POST", action="/post/contact")

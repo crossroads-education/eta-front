@@ -104,12 +104,3 @@ textarea.poshy {
 	padding: 10px 12%;
 	text-align: center;
 }
-
-.container-navlinks-desktop>li>a {
-	color: black !important;
-	font-size: 1.2em;
-}
-
-#container-navbar-desktop {
-	margin-bottom: 30px;
-}
