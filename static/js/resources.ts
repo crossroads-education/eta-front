@@ -3,7 +3,11 @@ export module resources {
         $(".container-groups").accordion({
             "heightStyle": "content",
             "collapsible": true,
-            "active": false
+            "active": false,
+            "icons": {
+                header: "iconClosed",
+                activeHeader: "iconOpen"
+            }
         });
         $(".container-courses").tabs();
     });
