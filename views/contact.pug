@@ -2,25 +2,46 @@ extends ./include/layout.old.pug
 
 block body
     div.no-image#container-header
-        img(src="/img/contact/header.png", alt="MAC Phone Number")
-        //- a(href="tel:+13172747898")
-        pre.header-text.no-image.text-center(style="position: static;")
-            strong SAY HELLO
+        img(src="/img/contact/header-bubble.png", alt="SAY HELLO")
     div.container-box
-        form(method="POST", action="/post/contact")
-            label.label-form(for="input-name") Name:
-            input.poshy#input-name(type="text", name="name", required)
-            br
-            label.label-form(for="input-email") Email:
-            input.poshy#input-email(type="email", name="email", required)
-            br
-            label.label-form(for="input-phone") Phone:
-            input.poshy#input-phone(type="tel", name="phone")
-            br
-            label.label-form(for="input-subject") Subject:
-            input.poshy#input-subject(type="text", name="subject", required)
-            br
-            label.label-form(for="input-message") Message:
-            textarea.poshy#input-message(name="message", required)
-            div.container-submit
-                button(type="submit") Submit
+        div.col-xs-8#form-container
+            form(method="POST", action="/post/contact")
+                label.label-form(for="input-name") *NAME
+                input.poshy#input-name(type="text", name="name", required)
+                br
+                label.label-form(for="input-email") *EMAIL
+                input.poshy#input-email(type="email", name="email", required)
+                br
+                label.label-form(for="input-phone") PHONE #
+                input.poshy#input-phone(type="tel", name="phone")
+                br
+                label.label-form(for="input-subject") SUBJECT
+                input.poshy#input-subject(type="text", name="subject", required)
+                br
+                label.label-form(for="input-message") *MESSAGE
+                textarea.poshy#input-message(name="message", required)
+        div.col-xs-4#contact-container
+            div#mac-contact
+                strong MAC
+                p 
+                    |815 West Michigan Street
+                    br
+                    |Room B01
+                    br
+                    |Indianapolis, IN 46202
+                    br
+                    br
+                    |p: 317-274-7898
+            div#mac-stat-contact
+                strong MAC Stat
+                p 
+                    |755 West Michigan Street
+                    br
+                    |Room 2135D
+                    br
+                    |Indianapolis, IN 46202
+                    br
+                    br
+                    |p: 317-274-7235
+        div.container-submit
+            button(type="submit") SUBMIT
