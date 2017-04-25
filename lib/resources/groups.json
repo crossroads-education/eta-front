@@ -60,6 +60,10 @@
     "name": "MATH 23200",
     "codeName": "MATH-23200",
     "description": "Calculus for Life Sciences II"
+  }, {
+    "name": "MATH 26100",
+    "codeName": "MATH-26100",
+    "description": "Multivariate Calculus"
   }]
 }, {
   "name": "Statistics",
