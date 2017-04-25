@@ -1,10 +1,40 @@
 #container-header img {
 	width: auto;
 	position: absolute;
-	left: 67%;
-	top: 15%;
+	left: 30%;
+	top: 10%;
+	margin-top: 30px;
 }
 
+#container-header.no-image {
+	border-bottom: 0px !important;
+	margin-bottom: 30px;
+}
+
+#form-container {
+	display: inline-block;
+	width: 60%;
+	padding-left: 100px;
+}
+
+#contact-container {
+	display: inline-block;
+	padding-right: 15px;
+	margin-top: 100px;
+	text-align: left;
+	vertical-align: top;
+
+	margin-left: 40px;
+}
+
+#contact-container strong {
+	font-size: 1.8em;
+	font-weight: 750;
+}
+
+#mac-stat-contact {
+	margin-top: 30px;
+}
 .label-form {
     display: inline-block;
     padding-right: 15px;
@@ -13,9 +43,10 @@
     vertical-align: top;
 	float: left;
 	clear: both;
-	font-weight: bold;
+	font-weight: bolder;
 	font-size: 1.3em;
 	margin-left: 40px;
+	overflow: hidden;
 }
 
 .poshy {
@@ -57,23 +88,21 @@ textarea.poshy {
 
 .container-submit button {
     display: block;
-	clear: both;
 	position: relative;
 	width: 180px;
-	height: 30px;
+	height: 45px;
 	border: 2px solid #b30f1a;
     border-radius: 25px;
     color: #000;
     font-size: 1.1em;
-    font-weight: bold;
+	font-weight: bold;
 	background-color: #FFF;
 }
 
 .container-submit {
-	border-top: 1px solid #f0f0f0;
 	float: left;
 	clear: both;
-	/*width: 100%;*/
-	padding: 10px 40%;
+	padding: 10px 12%;
 	text-align: center;
+	margin-bottom: 70px;
 }
