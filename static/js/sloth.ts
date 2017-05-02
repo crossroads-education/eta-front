@@ -7,7 +7,7 @@ export module sloth {
     }
 
     $(document).ready(function() {
-        $("#body").sloth({
+        (<any>$("#body")).sloth({
             "imageUrl": "/itrac/images/signin/sloth.svg",
             "zIndex": 99999
         });
