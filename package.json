@@ -16,5 +16,9 @@
   },
   "engines": {
     "node": ">=4.4.0"
+  },
+  "devDependencies": {
+    "@types/es6-shim": "^0.31.33",
+    "@types/express-session": "0.0.32"
   }
 }
