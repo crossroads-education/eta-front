@@ -1,4 +1,4 @@
-/// <reference path="./typings/index.d.ts"/>
+declare var requirejs: any;
 
 requirejs.config({
     "baseUrl": "/js/",

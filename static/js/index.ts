@@ -1,5 +1,3 @@
-/// <reference path="./typings/index.d.ts"/>
-
 import "underscore";
 import "bootstrap-calendar";
 export module index {

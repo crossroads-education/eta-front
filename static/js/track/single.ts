@@ -6,7 +6,7 @@ export module single {
     }
 
     $(document).ready(function() {
-        let studentTable: DataTables.DataTable;
+        let studentTable: DataTables.Api;
         $(".container-professor-section tbody tr,.container-athlete tbody tr").on("click", function() {
             let $this: JQuery = $(this);
             let studentID: string = $this.find("td[data-type='id']").text();
@@ -23,9 +23,9 @@ export module single {
                 }
                 $(".container-single p").text("");
                 $(".container-single").removeClass("empty");
-                studentTable.fnClearTable();
-                studentTable.fnAddData(data.visits);
-                studentTable.fnDraw();
+                studentTable.clear();
+                studentTable.row.add(data.visits);
+                studentTable.draw();
                 $('html, body').animate({
                     scrollTop: $(".container-single").offset().top
                 }, 800);
@@ -35,15 +35,12 @@ export module single {
                 }
             });
         });
-        studentTable = (<any>$(".container-single table")).dataTable({
+        studentTable = $(".container-single table").DataTable({
             "paging": true,
             "info": false,
             "ordering": true,
             "order": [[1, "desc"], [2, "desc"]],
-            "dom": 'lfrtTp',
-            "tableTools": {
-                "sSwfPath": "js/DataTables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
-            }
+            "dom": 'lfrtTp'
         });
     });
 }
