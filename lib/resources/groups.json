@@ -64,6 +64,10 @@
     "name": "MATH 26100",
     "codeName": "MATH-26100",
     "description": "Multivariate Calculus"
+  }, {
+    "name": "MATH 26600",
+    "codeName": "MATH-26600",
+    "description": "Ordinary Differential Equations"
   }]
 }, {
   "name": "Statistics",
