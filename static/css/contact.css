@@ -60,6 +60,7 @@
 	clear: both;
     border: 0;
     margin-left: 40px;
+	padding-left: 10px;
 }
 
 input.poshy {
@@ -74,6 +75,7 @@ textarea.poshy {
     max-width: 400px;
     min-height: 100px;
     resize: none;
+	padding-top: 10px;
 }
 
 .container-box {

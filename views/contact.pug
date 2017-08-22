@@ -15,11 +15,13 @@ block body
                 label.label-form(for="input-phone") PHONE #
                 input.poshy#input-phone(type="tel", name="phone")
                 br
-                label.label-form(for="input-subject") SUBJECT
+                label.label-form(for="input-subject") *SUBJECT
                 input.poshy#input-subject(type="text", name="subject", required)
                 br
                 label.label-form(for="input-message") *MESSAGE
                 textarea.poshy#input-message(name="message", required)
+                div.container-submit
+                    button(type="submit") SUBMIT
         div.col-xs-4#contact-container
             div#mac-contact
                 strong MAC
@@ -43,5 +45,3 @@ block body
                     br
                     br
                     |p: 317-274-7235
-        div.container-submit
-            button(type="submit") SUBMIT
