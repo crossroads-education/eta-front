@@ -9,12 +9,26 @@ block body
             the <strong>tutoring</strong>
 
             <strong>to you</strong>
-    div.container-body
-        div.
-        p
-            | Our online services have changed as of February 20th, 2017.
-            | If you have any questions, please contact us&nbsp;
-            a(href="/contact") here
-            | .
-        p Please click the button below to access our online services.
-        a.btn-nexus(href="https://mac.nexus.crossroadseducation.org") Nexus Online Tutoring
+    div.container-box
+        div.div.col-xs-6#nexusInfo
+          p
+              | Our online services have changed as of February 20th, 2017.
+              | If you have any questions, please contact us&nbsp;
+              a(href="/contact") here
+              | .
+          p Please click the button below to access our online services.
+          a.btn-nexus(href="https://mac.nexus.crossroadseducation.org") Nexus Online Tutoring
+        div.col-xs-6#onlineHours
+          table.table#hours-table
+              thead
+                  tr
+                      th.null
+                      th.hours-index Online Hours
+              tbody
+                  each row in rows
+                      tr
+                          td.form-label.hours-index #{row.day}
+                          if ( row.onlineOpen != row.onlineClose)
+                              td.form-label.hours #{row.onlineOpen}-#{row.onlineClose}
+                          -else
+                              td.form-label.hours Closed
