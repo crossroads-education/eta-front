@@ -68,7 +68,11 @@
     "name": "MATH 26600",
     "codeName": "MATH-26600",
     "description": "Ordinary Differential Equations"
-  }]
+  }, {
+    "name": "MATH 35100",
+    "codeName": "MATH-35100",
+    "description": "Elementary Linear Algebra"
+    }]
 }, {
   "name": "Statistics",
   "courses": [{
