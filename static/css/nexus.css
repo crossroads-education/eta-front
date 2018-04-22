@@ -32,3 +32,30 @@
 	background-color: #C72027;
 	color: #FFF;
 }
+
+#nexusInfo {
+	display:inline-block;
+	float:left;
+	width: 45%;
+}
+
+#onlineHours {
+	display:inline-block;
+	float:right;
+	width: 45%;
+	padding: 13px 0;
+}
+
+#hours-table{
+    table-layout: fixed;
+    border: 0 !important;
+}
+
+#hours-table th{
+    border-bottom: 0 !important;
+}
+
+#hours-table td{
+    width: 120px;
+    border-top: 0 !important;
+}

@@ -1,0 +1,20 @@
+extends ./include/layout.old.pug
+
+block body
+    div.no-image#container-header
+        pre.header-text.text-center.no-image(style="position: static;").
+            <strong>Exam Jam 2018</strong>
+            
+        div.container-groups
+            each group in groups
+                h1 #{group.name}
+                div.container-courses
+                    table
+                        each row in rows
+                            tr
+                                td(rowspan="#{row.numExamJams}") 
+                                      strong #{row.className}
+                                td.date #{row.date}
+                                td.location #{row.loacation}
+                br
+    
