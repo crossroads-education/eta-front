@@ -37,7 +37,7 @@ export class Model implements eta.Model {
             SELECT
                 CONCAT(C.subject, ' ', C.number) AS className,
                 EJ.date,
-                CONCAT(EJ.location, ' ') as loc,
+                EJ.location,
                 Num.numExamJams
             FROM
                 (
