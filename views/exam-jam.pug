@@ -30,7 +30,7 @@ block body
                     - let prev = "none";
                     each row in rows
                         tr
-                            +createTable(prev, row.numExamJams, row.className, row.date, row.location)
+                            +createTable(prev, #{row.numExamJams}, #{row.className}, #{row.date}, #{row.location})
                         
     
                         
