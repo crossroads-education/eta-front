@@ -1,20 +1,26 @@
 extends ./include/layout.old.pug
 
+- let dates = [];
+  for(let row of rows) {
+      let month = row.date.getMonth() + 1;
+      let day = row.date.getDate();
+      let monthDay = month + '/' + day
+      date.push(monthDay);
+  }
+
 block body
     div.no-image#container-header
         pre.header-text.text-center.no-image(style="position: static;").
             <strong>Exam Jam 2018</strong>
             
         div.container-groups
-            each group in groups
-                h1 #{group.name}
-                div.container-courses
-                    table
-                        each row in rows
+            div.container-courses
+                table
+                    each row in rows
+                        each date in dates
                             tr
                                 td(rowspan="#{row.numExamJams}") 
                                       strong #{row.className}
-                                td.date #{row.date}
-                                td.location #{row.loacation}
-                br
+                                td.date #{dates.date}
+                                td.location #{row.location}
     
