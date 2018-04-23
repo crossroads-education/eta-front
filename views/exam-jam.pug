@@ -19,17 +19,24 @@ block body
             div.container-courses
                 table
                     - let prev = "none";
-                    each row in rows
+                    thead
                         tr
-                          if (row.className != prev)
-                              td(rowspan=row.numExamJams ) #{row.className}
-                              td.date #{row.date}
-                              td.location #{row.location}
-                              - prev = row.className
-                          else
-                              td.date #{row.date}
-                              td.location #{row.location}
-                              - prev = row.className
+                            th Course
+                            th Date
+                            th Location
+                    tbody
+                        each row in rows
+                            tr
+                              if (row.className != prev)
+                                  td.name(rowspan=row.numExamJams ) 
+                                      strong #{row.className}
+                                  td.date #{row.date}
+                                  td.location #{row.location}
+                                  - prev = row.className
+                              else
+                                  td.date #{row.date}
+                                  td.location #{row.location}
+                                  - prev = row.className
                         
     
                         
