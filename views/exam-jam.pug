@@ -1,5 +1,15 @@
 extends ./include/layout.old.pug
 
+- let prev = "none";
+
+mixin withName(num, name, date, loc)
+    td(rowspan = num ) = name
+    td.date = date
+    td.location = loc
+    
+mixin noName(date, loc)
+    td.date = date
+    td.location = loc
 
 block body
     div.no-image#container-header
@@ -10,9 +20,11 @@ block body
             div.container-courses
                 table
                     each row in rows
-                            tr
-                                td(rowspan="#{row.numExamJams}") 
-                                      strong #{row.className}
-                                td.date #{row.date}
-                                td.location #{row.location}
+                        if row.className === prev
+                            +withName(row.numExamJams, row.className, row.date, row.location)
+                        else
+                            +noName(row.date, row.location)
+    
+                        
+                        
     
