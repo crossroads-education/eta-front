@@ -1,7 +1,5 @@
 extends ./include/layout.old.pug
 
-- let prev = "none";
-
 mixin withName(num, name, date, loc)
     td(rowspan = num ) = name
     td.date = date
@@ -19,11 +17,13 @@ block body
         div.container-groups
             div.container-courses
                 table
+                    - let prev = "none";
                     each row in rows
                         if row.className === prev
                             +withName(row.numExamJams, row.className, row.date, row.location)
                         else
                             +noName(row.date, row.location)
+                        - prev = row.className
     
                         
                         
