@@ -73,11 +73,11 @@ export class Model implements eta.Model {
                 return callback({errcode: eta.http.InternalError});
             }
             let dates: string[] = [];
-              for(let row of rows) {
-                  let month = row.date.getMonth() + 1;
-                  let day = row.date.getDate();
+              for(let i: number = 0; i < rows.length; i++) {
+                  let month = row[i].date.getMonth() + 1;
+                  let day = row[i].date.getDate();
                   let monthDay = month + '/' + day
-                  date.push(monthDay);
+                  dates.push(monthDay);
               }
             return callback({
                 rows: rows,
