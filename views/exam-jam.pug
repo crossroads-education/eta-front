@@ -21,7 +21,7 @@ block body
                     - let prev = "none";
                     each row in rows
                         tr
-                          if (row.className == prev)
+                          if (row.className != prev)
                               td(rowspan = '#{row.numExamJams}' ) #{row.className}
                               td.date #{row.date}
                               td.location #{row.location}
