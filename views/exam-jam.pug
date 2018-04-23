@@ -22,7 +22,7 @@ block body
                     each row in rows
                         tr
                           -
-                              if (row.className === prev)
+                              if (row.className == prev)
                                   +withName('#{row.numExamJams}', '#{row.className}', '#{row.date}', '#{row.location}')
                                   - prev = row.className
                               else
