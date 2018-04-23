@@ -72,7 +72,7 @@ export class Model implements eta.Model {
                 eta.logger.error(err);
                 return callback({errcode: eta.http.InternalError});
             }
-            let dates: string[] = [];
+            let dates: string[] = [rows.length];
               for(let i: number = 0; i < rows.length; i++) {
                   let month = row[i].date.getMonth() + 1;
                   let day = row[i].date.getDate();
