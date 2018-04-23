@@ -3,6 +3,8 @@ import * as eta from "eta-lib";
 import * as express from "express";
 import * as fs from "fs";
 
+
+
 interface Course {
     codeName: string;
     name: string;
@@ -35,7 +37,7 @@ export class Model implements eta.Model {
             SELECT
                 CONCAT(C.subject, ' ', C.number) AS className,
                 EJ.date,
-                EJ.location,
+                CONCAT(EJ.location, ' ') as loc,
                 Num.numExamJams
             FROM
                 (
