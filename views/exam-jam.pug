@@ -1,12 +1,5 @@
 extends ./include/layout.old.pug
 
-- let dates = [];
-  for(let row of rows) {
-      let month = row.date.getMonth() + 1;
-      let day = row.date.getDate();
-      let monthDay = month + '/' + day
-      date.push(monthDay);
-  }
 
 block body
     div.no-image#container-header
