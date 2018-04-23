@@ -22,7 +22,7 @@ block body
                     each row in rows
                         tr
                           if (row.className != prev)
-                              td(rowspan = '#{row.numExamJams}' ) #{row.className}
+                              td(rowspan=`#{row.numExamJams}` ) #{row.className}
                               td.date #{row.date}
                               td.location #{row.location}
                               - prev = row.className
