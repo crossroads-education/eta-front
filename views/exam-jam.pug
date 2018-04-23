@@ -10,10 +10,9 @@ block body
             div.container-courses
                 table
                     each row in rows
-                        each date in dates
                             tr
                                 td(rowspan="#{row.numExamJams}") 
                                       strong #{row.className}
-                                td.date #{dates.date}
+                                td.date #{row.date}
                                 td.location #{row.location}
     
