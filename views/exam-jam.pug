@@ -1,13 +1,13 @@
 extends ./include/layout.old.pug
 
-mixin withName(num, name, date, loc)
-    td(rowspan = num ) = name
-    td.date = date
-    td.location = loc
-    
-mixin noName(date, loc)
-    td.date = date
-    td.location = loc
+//- mixin withName(num, name, date, loc)
+//-     td(rowspan = num ) = name
+//-     td.date = date
+//-     td.location = loc
+//- 
+//- mixin noName(date, loc)
+//-     td.date = date
+//-     td.location = loc
     
 
 block body
@@ -21,16 +21,15 @@ block body
                     - let prev = "none";
                     each row in rows
                         tr
-                          -
-                              if (row.className == prev)
-                                  td(rowspan = '#{row.numExamJams}' ) = row.className
-                                  td.date = row.date
-                                  td.location = row.location
-                                  prev = row.className
-                              else
-                                  td.date = row.date
-                                  td.location = row.location
-                                  prev = row.className
+                          if (row.className == prev)
+                              td(rowspan = '#{row.numExamJams}' ) row.className
+                              td.date row.date
+                              td.location row.location
+                              prev = row.className
+                          else
+                              td.date row.date
+                              td.location row.location
+                              prev = row.className
                         
     
                         
