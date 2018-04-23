@@ -23,12 +23,13 @@ block body
                         tr
                           -
                               if (row.className == prev)
-                                  td(rowspan = '#{row.numExamJams}' ) = #{row.className}
-                                  td.date = #{row.date}
-                                  td.location = #{row.location}
+                                  td(rowspan = '#{row.numExamJams}' ) = row.className
+                                  td.date = row.date
+                                  td.location = row.location
                                   prev = row.className
                               else
-                                  +noName('#{row.date}', '#{row.location}')
+                                  td.date = row.date
+                                  td.location = row.location
                                   prev = row.className
                         
     
