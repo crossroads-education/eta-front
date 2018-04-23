@@ -8,15 +8,6 @@ mixin withName(num, name, date, loc)
 mixin noName(date, loc)
     td.date = date
     td.location = loc
-
-mixin createTable(prev, num, name, date, loc)
-    if name === prev
-        +withName(num, name, date, loc)
-        - prev = name
-    else
-        +noName(date, loc)
-        - prev = name
-
     
 
 block body
@@ -30,7 +21,13 @@ block body
                     - let prev = "none";
                     each row in rows
                         tr
-                            +createTable(prev, #{row.numExamJams}, #{row.className}, #{row.date}, #{row.location})
+                          -
+                              if (row.className === prev)
+                                  +withName('#{row.numExamJams}', '#{row.className}', '#{row.date}', '#{row.location}')
+                                  - prev = row.className
+                              else
+                                  +noName('#{row.date}', '#{row.location}')
+                                  - prev = row.className
                         
     
                         
