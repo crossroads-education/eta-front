@@ -5,7 +5,7 @@ import * as express from "express";
 export class Model implements eta.Model {
     public render(req: express.Request, res: express.Response, callback: (env: { [key: string]: any }) => void): void {
         if (!req.query.term) {
-            req.query.term = eta.term.getCurrent().id;
+            req.query.term = eta.term.getCurrent(true).id;
         }
         let os: string = (<any>eta.http.getUserAgent(req).os).family;
         let isMobile: boolean = false;
