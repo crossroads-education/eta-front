@@ -21,15 +21,7 @@ export class Model implements eta.Model {
         // temporary(?) redirect to math department's site
         // https:// redirects back to http:// unfortunately
         // res.redirect("http://math.iupui.edu/undergraduate/courses");
-        let groups: CourseGroup[];
-        let groupsFile: string = eta.server.modules["front"].baseDir + "lib/resources/groups.json";
-        fs.readFile(groupsFile, (err: Error, buffer: Buffer) => {
-            if (err) {
-                eta.logger.warn("Couldn't read resources groups (" + groupsFile + ")");
-                return callback({ errcode: eta.http.InternalError });
-            }
-            groups = JSON.parse(buffer.toString());
-        });
+
         let sql: string = `
             SELECT
                 CONCAT(C.subject, ' ', C.number) AS className,
@@ -66,6 +58,7 @@ export class Model implements eta.Model {
                 Num.course = C.id`;
         eta.db.query(sql, [req.query.term, req.query.term, req.query.term], (err: eta.DBError, rows: any[]) => {
             if (err) {
+                console.log('error');
                 eta.logger.error(err);
                 return callback({errcode: eta.http.InternalError});
             }
@@ -76,7 +69,6 @@ export class Model implements eta.Model {
                   rows[i].date = monthDay;
               }
             return callback({
-                "groups": groups,
                 rows: rows
             });
         });
