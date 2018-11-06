@@ -58,10 +58,10 @@ export class Model implements eta.Model {
                 Num.course = C.id`;
         eta.db.query(sql, [req.query.term, req.query.term, req.query.term], (err: eta.DBError, rows: any[]) => {
             if (err) {
-                console.log('error');
                 eta.logger.error(err);
                 return callback({errcode: eta.http.InternalError});
             }
+            console.log('error');
               for(let i: number = 0; i < rows.length; i++) {
                   let month = rows[i].date.getMonth() + 1;
                   let day = rows[i].date.getDate();
