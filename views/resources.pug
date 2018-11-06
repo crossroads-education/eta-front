@@ -21,19 +21,19 @@ block body
                         a.link-packet(target="_blank", href="/files/resources/" + course.codeName + "_Packet.pdf")
                             img.icon-packet(src="/img/resources/help.png")
                             h3 Download the Exam Jam Booklet
-                        div.container-others
-                            h3 Other Resources
-                            ul
-                                li
-                                    a(target="_blank", href="/files/resources/" + course.codeName + "_Solutions.pdf") Solutions
-                                //- Temporarily disabled since it confuses students when it's not near Exam Jams
-                                //-
-                                    li
-                                        a(target="_blank", href="/files/resources/" + course.codeName + "_Syllabus.pdf") Syllabus
-                                li
-                                    a(target="_blank", href="/files/resources/" + course.codeName + "_Concise.pdf") Concise
-                                if course.useConciseSolutions
-                                    li
-                                        a(target="_blank", href="/files/resources/" + course.codeName + "_Concise_Solutions.pdf") Concise Solutions
-                                li
-                                    a(target="_blank", href="https://math.iupui.edu/math/undergraduate/courses#" + course.codeName.toLowerCase()) Math Department Course Resources
+                        //- div.container-others
+                        //-     h3 Other Resources
+                        //-     ul
+                        //-         li
+                        //-             a(target="_blank", href="/files/resources/" + course.codeName + "_Solutions.pdf") Solutions
+                        //-         //- Temporarily disabled since it confuses students when it's not near Exam Jams
+                        //-         //-
+                        //-             li
+                        //-                 a(target="_blank", href="/files/resources/" + course.codeName + "_Syllabus.pdf") Syllabus
+                        //-         li
+                        //-             a(target="_blank", href="/files/resources/" + course.codeName + "_Concise.pdf") Concise
+                        //-         if course.useConciseSolutions
+                        //-             li
+                        //-                 a(target="_blank", href="/files/resources/" + course.codeName + "_Concise_Solutions.pdf") Concise Solutions
+                        //-         li
+                        //-             a(target="_blank", href="https://math.iupui.edu/math/undergraduate/courses#" + course.codeName.toLowerCase()) Math Department Course Resources
