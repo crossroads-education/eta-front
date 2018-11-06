@@ -19,8 +19,9 @@ block body
                 each course in group.courses
                     div.container-course(id=course.codeName)
                         a.link-packet(target="_blank", href="/files/resources/" + course.codeName + "_Packet.pdf")
+                            h3 Download the #{course.name} Exam Jam Booklet
                             img.icon-packet(src="/img/resources/help.png")
-                            h3 Download the Exam Jam Booklet
+                            
                         //- div.container-others
                         //-     h3 Other Resources
                         //-     ul

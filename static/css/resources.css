@@ -1,120 +1,121 @@
 .container-groups h1 {
-	background: #720F13;
-	text-align: center;
-	text-transform: uppercase;
-	color: white;
-	margin: 0;
-	padding: 15px;
-	border-bottom: 1px solid #5D080E;
-	letter-spacing: 1.5px;
-	font-size: 1.3em;
-	cursor: pointer;
-	outline: none;
+  background: #720f13;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+  padding: 15px;
+  border-bottom: 1px solid #5d080e;
+  letter-spacing: 1.5px;
+  font-size: 1.3em;
+  cursor: pointer;
+  outline: none;
 }
 
 .container-groups .container-courses {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .container-groups .container-courses ul,
 .container-groups .container-courses .container-course {
-	padding: 30px 4% 0;
-	float: left;
-	margin-top: 0;
-	margin-bottom: -99999px;
-	padding-bottom: 99999px;
-	border-bottom: 1px solid #5D080E;
+  padding: 30px 4% 0;
+  float: left;
+  margin-top: 0;
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+  border-bottom: 1px solid #5d080e;
 }
 
 .container-groups .container-courses ul li,
 .container-groups .container-courses .container-course div {
-	padding-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .container-groups .container-courses ul {
-	background: #B60E19;
-	width: 32%;
+  background: #b60e19;
+  width: 32%;
 }
 
 .container-groups .container-courses ul li {
-	color: white;
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .container-groups .container-courses ul li.na {
-	color: #444;
+  color: #444;
 }
 
 .container-groups .container-courses ul li:nth-last-of-type(1) {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .container-groups .container-courses ul li a {
-	color: white;
-	text-decoration: none;
-	line-height: 30px;
-	font-size: 0.95em;
+  color: white;
+  text-decoration: none;
+  line-height: 30px;
+  font-size: 0.95em;
 }
 
 .container-groups .container-courses .container-course {
-	background: #DCDCDC;
-	width: 52%;
-	position: relative;
+  background: #dcdcdc;
+  width: 52%;
+  position: relative;
 }
 
-.container-groups .container-courses .container-course a.link-packet, .container-groups .container-courses .container-course div.link-packet {
-	display: block;
-	background: #BDBDBD;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 200px;
-	text-decoration: none;
+.container-groups .container-courses .container-course a.link-packet,
+.container-groups .container-courses .container-course div.link-packet {
+  display: block;
+  background: #bdbdbd;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  text-decoration: none;
 }
 
-.container-groups .container-courses .container-course a.link-packet h3, .container-groups .container-courses .container-course div.link-packet h3 {
-	text-align: center;
-	text-transform: uppercase;
-	color: black;
+.container-groups .container-courses .container-course a.link-packet h3,
+.container-groups .container-courses .container-course div.link-packet h3 {
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
 }
 
 .container-groups .container-courses .container-course .container-others {
-	margin-top: 200px;
-	text-align: center;
+  margin-top: 200px;
+  text-align: center;
 }
 
 .container-groups .container-courses .container-course .container-others.no-mac-hack {
-	margin-top: 220px;
-	text-align: center;
+  margin-top: 220px;
+  text-align: center;
 }
 
 .container-groups .container-courses .container-course .container-others h3 {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 .container-groups .container-courses .container-course .container-others a {
-	color: black;
-	text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .icon-packet {
-	width: 10%;
-	margin: 25px 45% 0;
+  width: 10%;
+  margin: 25px 45% 0;
 }
 
 .container-groups .container-others li {
-
 }
 
-.container-groups .container-others li:nth-child(n+2) {
-	/*border-top: 1px solid #fff;*/
+.container-groups .container-others li:nth-child(n + 2) {
+  /*border-top: 1px solid #fff;*/
 }
 
 .container-groups .container-others ul {
-	background: #dcdcdc none repeat scroll 0 0;
-	width: 42%;
-	padding-top: 0;
+  background: #dcdcdc none repeat scroll 0 0;
+  width: 42%;
+  padding-top: 0;
 }

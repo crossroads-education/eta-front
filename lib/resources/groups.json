@@ -83,5 +83,9 @@
     "name": "STAT 35000",
     "codeName": "STAT-35000",
     "description": "Introduction to Statistics"
+  }, {
+    "name": "SPEA-K 300",
+    "codeName": "SPEA-K300",
+    "description": "Statistical Techniques"
   }]
 }]
