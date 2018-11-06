@@ -19,7 +19,11 @@ mixin mobileNavBar
                 div.collapse.navbar-collapse#collapse-elements
                     ul.nav.navbar#navbar-list
                         li.navbar-element.text-center
+                            a(href=baseurl + "exam-jam") Exam Jam Fall 2018
+                        li.navbar-element.text-center
                             a(href=baseurl + (useWizIQ ? "online" : "nexus")) Live Help
+                        li.navbar-element.text-center
+                            a(href=baseurl + "resources") Resources
                         li.navbar-element.text-center
                             a(href=baseurl + "team") The Team
                         li.navbar-element.text-center
@@ -50,7 +54,11 @@ mixin mobileFooter
                 td.footer-column1
                     ul
                         li
+                            a.list-text(href=baseurl + "exam-jam") Exam Jam Fall 2018
+                        li
                             a.list-text(href=baseurl + (useWizIQ ? "online" : "nexus")) Live Help
+                        li
+                            a.list-text(href=baseurl + "resources") Resources
                         li
                             a.list-text(href=baseurl + "apply") Jobs
                 td.footer-column2
@@ -86,7 +94,11 @@ mixin desktopNavBar
                 a(href=baseurl)
                     div.mac-logo
             li
+                a(href=baseurl + "exam-jam") Exam Jam Fall 2018
+            li
                 a(href=baseurl + (useWizIQ ? "online" : "nexus")) Live Help
+            li
+                a(href=baseurl + "resources") Resources
             li
                 a(href=baseurl + "apply") Jobs
             li
@@ -111,7 +123,11 @@ mixin desktopFooter
                 td.footer-column1
                     ul.footer-column1-list
                         li
+                            a.list-text(href=baseurl + "exam-jam") Exam Jam Fall 2018
+                        li
                             a.list-text(href=baseurl + (useWizIQ ? "online" : "nexus")) Live Help
+                        li
+                            a.list-text(href=baseurl + "resources") Resources
                         li
                             a.list-text(href=baseurl + "apply") Jobs
                 td.footer-column2
