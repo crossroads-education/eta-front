@@ -76,10 +76,6 @@
 }, {
   "name": "Statistics",
   "courses": [{
-    "name": "STAT 30100",
-    "codeName": "STAT-30100",
-    "description": "Elementary Statistics Methods I"
-  }, {
     "name": "STAT 35000",
     "codeName": "STAT-35000",
     "description": "Introduction to Statistics"
@@ -89,3 +85,5 @@
     "description": "Statistical Techniques"
   }]
 }]
+
+
