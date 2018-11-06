@@ -17,27 +17,29 @@ block body
             
         div.container-groups
             div.container-courses
-              p *All Exam Jams are from 8pm to 10pm.
-                table
-                    - let prev = "none";
-                    thead
-                        tr
-                            th Course
-                            th Date
-                            th Location
-                    tbody
-                        each row in rows
-                            tr
-                              if (row.className != prev)
-                                  td.name(rowspan=row.numExamJams ) 
-                                      strong #{row.className}
-                                  td.date #{row.date}
-                                  td.location #{row.location}
-                                  - prev = row.className
-                              else
-                                  td.date #{row.date}
-                                  td.location #{row.location}
-                                  - prev = row.className
+                a(target="_blank", href="/files/resources/Exam-Jam-Schedule_Fall2018.pdf")
+                    p Click on the schedule below to download.
+                    img(src="/img/resources/Exam-Jam-Schedule_Fall2018.pdf")
+                //- table
+                //-     - let prev = "none";
+                //-     thead
+                //-         tr
+                //-             th Course
+                //-             th Date
+                //-             th Location
+                //-     tbody
+                //-         each row in rows
+                //-             tr
+                //-               if (row.className != prev)
+                //-                   td.name(rowspan=row.numExamJams ) 
+                //-                       strong #{row.className}
+                //-                   td.date #{row.date}
+                //-                   td.location #{row.location}
+                //-                   - prev = row.className
+                //-               else
+                //-                   td.date #{row.date}
+                //-                   td.location #{row.location}
+                //-                   - prev = row.className
                         
     
                         
