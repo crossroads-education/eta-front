@@ -15,29 +15,29 @@ block body
         pre.header-text.text-center.no-image(style="position: static;").
             <strong>Exam Jam 2018</strong>
             
-        //- div.container-groups
-        //-     div.container-courses
-        //-       p *All Exam Jams are from 8pm to 10pm.
-        //-         table
-        //-             - let prev = "none";
-        //-             thead
-        //-                 tr
-        //-                     th Course
-        //-                     th Date
-        //-                     th Location
-        //-             tbody
-        //-                 each row in rows
-        //-                     tr
-        //-                       if (row.className != prev)
-        //-                           td.name(rowspan=row.numExamJams ) 
-        //-                               strong #{row.className}
-        //-                           td.date #{row.date}
-        //-                           td.location #{row.location}
-        //-                           - prev = row.className
-        //-                       else
-        //-                           td.date #{row.date}
-        //-                           td.location #{row.location}
-        //-                           - prev = row.className
+        div.container-groups
+            div.container-courses
+              p *All Exam Jams are from 8pm to 10pm.
+                table
+                    - let prev = "none";
+                    thead
+                        tr
+                            th Course
+                            th Date
+                            th Location
+                    tbody
+                        each row in rows
+                            tr
+                              if (row.className != prev)
+                                  td.name(rowspan=row.numExamJams ) 
+                                      strong #{row.className}
+                                  td.date #{row.date}
+                                  td.location #{row.location}
+                                  - prev = row.className
+                              else
+                                  td.date #{row.date}
+                                  td.location #{row.location}
+                                  - prev = row.className
                         
     
                         
